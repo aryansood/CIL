@@ -1,0 +1,15 @@
+{"time":"2025-04-09T16:07:23.469331352+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_160723-kfjo66bk/logs/debug-core.log"}
+{"time":"2025-04-09T16:07:25.287347893+02:00","level":"INFO","msg":"created new stream","id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:25.287403683+02:00","level":"INFO","msg":"stream: started","id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:25.287422676+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:25.287477279+02:00","level":"INFO","msg":"handler: started","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:25.287502207+02:00","level":"INFO","msg":"sender: started","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:25.638965981+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T16:07:27.94280667+02:00","level":"INFO","msg":"stream: closing","id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:27.942847029+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T16:07:27.942901632+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T16:07:28.689780314+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T16:07:29.175997275+02:00","level":"INFO","msg":"handler: closed","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:29.17606731+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:29.176123101+02:00","level":"INFO","msg":"sender: closed","stream_id":"kfjo66bk"}
+{"time":"2025-04-09T16:07:29.176208567+02:00","level":"INFO","msg":"stream: closed","id":"kfjo66bk"}

@@ -1,0 +1,29 @@
+tensor(0.0324, device='cuda:0', grad_fn=<AddBackward0>)
+0
+11.728318214416504
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    Loss_gradient(outputs, batch_img)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 38, in Loss_gradient
+    plt.show()
+    ~~~~~~~~^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/pyplot.py", line 614, in show
+    return _get_backend_mod().show(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/backend_bases.py", line 3547, in show
+    cls.mainloop()
+    ~~~~~~~~~~~~^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/backends/backend_qt.py", line 642, in start_main_loop
+    with _allow_interrupt_qt(qapp):
+         ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/contextlib.py", line 148, in __exit__
+    next(self.gen)
+    ~~~~^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/backend_bases.py", line 1658, in _allow_interrupt
+    old_sigint_handler(*handler_args)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyboardInterrupt

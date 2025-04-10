@@ -1,0 +1,86 @@
+tensor(0.0706, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+3.0021307468414307
+tensor(0.0625, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+6.8145904541015625
+tensor(0.0660, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+9.156754493713379
+tensor(0.0668, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+11.764386177062988
+tensor(0.0755, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+22.058671951293945
+tensor(0.0538, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+6.890717029571533
+tensor(0.0614, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+8.166030883789062
+tensor(0.0480, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.248086452484131
+tensor(0.0543, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+6.657658100128174
+tensor(0.0600, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+17.390893936157227
+tensor(0.0468, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+9.628798484802246
+tensor(0.0479, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.479275703430176
+tensor(0.0459, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.36375093460083
+tensor(0.0460, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+13.473284721374512
+tensor(0.0393, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+2.794294595718384
+tensor(0.0703, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+22.266401290893555
+tensor(0.0440, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+16.803558349609375
+tensor(0.0404, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+3.7351770401000977
+tensor(0.0500, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+26.429943084716797
+tensor(0.0488, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+7.301874160766602
+tensor(0.0372, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+6.619753837585449
+tensor(0.0367, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+10.257311820983887
+tensor(0.0426, device='cuda:0', grad_fn=<MeanBackward0>)
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 38, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x717d5b64f920>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

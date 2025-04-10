@@ -1,0 +1,86 @@
+tensor(0.0169, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+11.862056732177734
+tensor(0.0115, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+11.177677154541016
+tensor(0.0107, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+9.947879791259766
+tensor(0.0108, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+7.43312406539917
+tensor(0.0100, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+7.8709211349487305
+tensor(0.0089, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.5874528884887695
+tensor(0.0066, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.859676837921143
+tensor(0.0073, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.57023811340332
+tensor(0.0068, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.967693328857422
+tensor(0.0064, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.350971221923828
+tensor(0.0059, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.459464073181152
+tensor(0.0057, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+6.2550153732299805
+tensor(0.0051, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.406759738922119
+tensor(0.0051, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.875951290130615
+tensor(0.0051, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+4.297656536102295
+tensor(0.0051, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.091933250427246
+tensor(0.0040, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+5.129520893096924
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    Loss_gradient(outputs, batch_img)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 36, in Loss_gradient
+    print(diff_x_mean)
+    ~~~~~^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor.py", line 568, in __repr__
+    return torch._tensor_str._str(self, tensor_contents=tensor_contents)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor_str.py", line 704, in _str
+    return _str_intern(self, tensor_contents=tensor_contents)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor_str.py", line 621, in _str_intern
+    tensor_str = _tensor_str(self, indent)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor_str.py", line 353, in _tensor_str
+    formatter = _Formatter(get_summarized_data(self) if summarize else self)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor_str.py", line 145, in __init__
+    nonzero_finite_vals = torch.masked_select(
+        tensor_view, torch.isfinite(tensor_view) & tensor_view.ne(0)
+    )
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x7cbe9d13b880>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

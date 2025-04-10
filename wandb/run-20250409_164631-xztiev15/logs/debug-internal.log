@@ -1,0 +1,7 @@
+{"time":"2025-04-09T16:46:31.840531554+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_164631-xztiev15/logs/debug-core.log"}
+{"time":"2025-04-09T16:46:32.218854364+02:00","level":"INFO","msg":"created new stream","id":"xztiev15"}
+{"time":"2025-04-09T16:46:32.21893985+02:00","level":"INFO","msg":"stream: started","id":"xztiev15"}
+{"time":"2025-04-09T16:46:32.219012275+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"xztiev15"}
+{"time":"2025-04-09T16:46:32.219131006+02:00","level":"INFO","msg":"sender: started","stream_id":"xztiev15"}
+{"time":"2025-04-09T16:46:32.219307913+02:00","level":"INFO","msg":"handler: started","stream_id":"xztiev15"}
+{"time":"2025-04-09T16:46:32.532569001+02:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,15 @@
+{"time":"2025-04-09T10:37:52.729190503+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_103752-m42fpyyx/logs/debug-core.log"}
+{"time":"2025-04-09T10:37:53.0426408+02:00","level":"INFO","msg":"created new stream","id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:53.042702537+02:00","level":"INFO","msg":"stream: started","id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:53.042816513+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:53.042850943+02:00","level":"INFO","msg":"sender: started","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:53.042986289+02:00","level":"INFO","msg":"handler: started","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:53.337091545+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T10:37:55.594305373+02:00","level":"INFO","msg":"stream: closing","id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:55.594345739+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T10:37:55.59450483+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T10:37:56.507998848+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T10:37:56.916989368+02:00","level":"INFO","msg":"handler: closed","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:56.917090285+02:00","level":"INFO","msg":"sender: closed","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:56.917090285+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"m42fpyyx"}
+{"time":"2025-04-09T10:37:56.917255312+02:00","level":"INFO","msg":"stream: closed","id":"m42fpyyx"}

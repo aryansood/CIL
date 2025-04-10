@@ -1,0 +1,7 @@
+{"time":"2025-04-10T20:23:17.539715778+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250410_202317-r3tphmoz/logs/debug-core.log"}
+{"time":"2025-04-10T20:23:17.917058729+02:00","level":"INFO","msg":"created new stream","id":"r3tphmoz"}
+{"time":"2025-04-10T20:23:17.917124032+02:00","level":"INFO","msg":"stream: started","id":"r3tphmoz"}
+{"time":"2025-04-10T20:23:17.917175087+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"r3tphmoz"}
+{"time":"2025-04-10T20:23:17.917220206+02:00","level":"INFO","msg":"handler: started","stream_id":"r3tphmoz"}
+{"time":"2025-04-10T20:23:17.917251076+02:00","level":"INFO","msg":"sender: started","stream_id":"r3tphmoz"}
+{"time":"2025-04-10T20:23:18.226993613+02:00","level":"INFO","msg":"Starting system monitor"}

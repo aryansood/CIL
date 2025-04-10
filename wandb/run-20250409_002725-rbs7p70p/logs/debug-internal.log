@@ -1,0 +1,15 @@
+{"time":"2025-04-09T00:27:25.914710304+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_002725-rbs7p70p/logs/debug-core.log"}
+{"time":"2025-04-09T00:27:26.219717251+02:00","level":"INFO","msg":"created new stream","id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:26.219787292+02:00","level":"INFO","msg":"stream: started","id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:26.21980035+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:26.219943992+02:00","level":"INFO","msg":"handler: started","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:26.21997367+02:00","level":"INFO","msg":"sender: started","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:26.531315119+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T00:27:28.157390851+02:00","level":"INFO","msg":"stream: closing","id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:28.15746564+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T00:27:28.15752737+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T00:27:28.802531787+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T00:27:29.079091648+02:00","level":"INFO","msg":"handler: closed","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:29.079155753+02:00","level":"INFO","msg":"sender: closed","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:29.079140321+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rbs7p70p"}
+{"time":"2025-04-09T00:27:29.079238852+02:00","level":"INFO","msg":"stream: closed","id":"rbs7p70p"}

@@ -1,0 +1,7 @@
+{"time":"2025-04-09T11:09:06.111609204+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_110906-uffet2w0/logs/debug-core.log"}
+{"time":"2025-04-09T11:09:06.394131237+02:00","level":"INFO","msg":"created new stream","id":"uffet2w0"}
+{"time":"2025-04-09T11:09:06.394178728+02:00","level":"INFO","msg":"stream: started","id":"uffet2w0"}
+{"time":"2025-04-09T11:09:06.394242841+02:00","level":"INFO","msg":"sender: started","stream_id":"uffet2w0"}
+{"time":"2025-04-09T11:09:06.394271335+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"uffet2w0"}
+{"time":"2025-04-09T11:09:06.394388876+02:00","level":"INFO","msg":"handler: started","stream_id":"uffet2w0"}
+{"time":"2025-04-09T11:09:06.720866273+02:00","level":"INFO","msg":"Starting system monitor"}

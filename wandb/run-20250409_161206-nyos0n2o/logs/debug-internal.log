@@ -1,0 +1,7 @@
+{"time":"2025-04-09T16:12:06.769191678+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_161206-nyos0n2o/logs/debug-core.log"}
+{"time":"2025-04-09T16:12:08.605260626+02:00","level":"INFO","msg":"created new stream","id":"nyos0n2o"}
+{"time":"2025-04-09T16:12:08.605311697+02:00","level":"INFO","msg":"stream: started","id":"nyos0n2o"}
+{"time":"2025-04-09T16:12:08.605337825+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"nyos0n2o"}
+{"time":"2025-04-09T16:12:08.605407898+02:00","level":"INFO","msg":"sender: started","stream_id":"nyos0n2o"}
+{"time":"2025-04-09T16:12:08.605463719+02:00","level":"INFO","msg":"handler: started","stream_id":"nyos0n2o"}
+{"time":"2025-04-09T16:12:09.055293291+02:00","level":"INFO","msg":"Starting system monitor"}

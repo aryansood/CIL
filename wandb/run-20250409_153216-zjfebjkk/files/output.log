@@ -1,0 +1,60 @@
+1
+0
+0.10378999263048172
+0
+0
+0.08997097611427307
+1
+0
+0.06916187703609467
+4
+0
+0.05699749290943146
+0
+0
+0.04984606057405472
+0
+0
+0.04188324511051178
+8
+0
+0.02684561163187027
+0
+0
+0.029301432892680168
+0
+0
+0.032525889575481415
+1
+0
+0.02180715650320053
+0
+0
+0.022708820179104805
+0
+0
+0.026594553142786026
+0
+0
+0.023869194090366364
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 41, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_2.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 944, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 1216, in _save
+    zip_file.write_record(name, storage, num_bytes)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

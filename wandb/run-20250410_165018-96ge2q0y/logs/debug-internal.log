@@ -1,0 +1,18 @@
+{"time":"2025-04-10T16:50:18.335964531+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250410_165018-96ge2q0y/logs/debug-core.log"}
+{"time":"2025-04-10T16:50:20.168571464+02:00","level":"INFO","msg":"created new stream","id":"96ge2q0y"}
+{"time":"2025-04-10T16:50:20.168659317+02:00","level":"INFO","msg":"stream: started","id":"96ge2q0y"}
+{"time":"2025-04-10T16:50:20.168670002+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T16:50:20.16871749+02:00","level":"INFO","msg":"handler: started","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T16:50:20.168805343+02:00","level":"INFO","msg":"sender: started","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T16:50:20.520735283+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-10T18:35:27.506998483+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/aryansood972-eth-z-rich/my-pytorch-training/96ge2q0y/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-04-10T18:35:29.861807633+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/aryansood972-eth-z-rich/my-pytorch-training/96ge2q0y/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-04-10T18:35:32.341860766+02:00","level":"INFO","msg":"stream: closing","id":"96ge2q0y"}
+{"time":"2025-04-10T18:35:32.341916567+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-10T18:35:32.341956935+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-10T18:35:34.016865166+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/aryansood972-eth-z-rich/my-pytorch-training/96ge2q0y/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-04-10T18:35:39.073634389+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-10T18:35:44.404274967+02:00","level":"INFO","msg":"handler: closed","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T18:35:44.404303462+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T18:35:44.404349765+02:00","level":"INFO","msg":"sender: closed","stream_id":"96ge2q0y"}
+{"time":"2025-04-10T18:35:44.404438811+02:00","level":"INFO","msg":"stream: closed","id":"96ge2q0y"}

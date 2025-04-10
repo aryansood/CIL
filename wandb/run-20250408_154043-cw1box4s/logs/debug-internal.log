@@ -1,0 +1,15 @@
+{"time":"2025-04-08T15:40:43.937890885+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250408_154043-cw1box4s/logs/debug-core.log"}
+{"time":"2025-04-08T15:40:44.439325415+02:00","level":"INFO","msg":"created new stream","id":"cw1box4s"}
+{"time":"2025-04-08T15:40:44.439425139+02:00","level":"INFO","msg":"stream: started","id":"cw1box4s"}
+{"time":"2025-04-08T15:40:44.439493996+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:44.439518927+02:00","level":"INFO","msg":"sender: started","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:44.439756366+02:00","level":"INFO","msg":"handler: started","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:44.630148814+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-08T15:40:46.891513172+02:00","level":"INFO","msg":"stream: closing","id":"cw1box4s"}
+{"time":"2025-04-08T15:40:46.891601024+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-08T15:40:46.891697187+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-08T15:40:47.627338647+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-08T15:40:47.919985159+02:00","level":"INFO","msg":"handler: closed","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:47.920021962+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:47.920108627+02:00","level":"INFO","msg":"sender: closed","stream_id":"cw1box4s"}
+{"time":"2025-04-08T15:40:47.920197667+02:00","level":"INFO","msg":"stream: closed","id":"cw1box4s"}

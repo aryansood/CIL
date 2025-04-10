@@ -1,0 +1,53 @@
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 3, 256, 256])
+0
+13.122136116027832
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 3, 256, 256])
+0
+12.95173454284668
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 944, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 1214, in _save
+    storage = storage.cpu()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/storage.py", line 267, in cpu
+    return torch.UntypedStorage(self.size()).copy_(self, False)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 41, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_2.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x75a399edb880>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

@@ -1,0 +1,18 @@
+tensor(0.0212, device='cuda:0', grad_fn=<AddBackward0>)
+0
+12.487533569335938
+tensor(0.0211, device='cuda:0', grad_fn=<AddBackward0>)
+0
+11.925697326660156
+tensor(0.0224, device='cuda:0', grad_fn=<AddBackward0>)
+0
+10.867225646972656
+tensor(0.0194, device='cuda:0', grad_fn=<AddBackward0>)
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 38, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt

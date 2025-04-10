@@ -1,0 +1,15 @@
+{"time":"2025-04-07T22:51:10.360135902+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250407_225110-egyc9dh3/logs/debug-core.log"}
+{"time":"2025-04-07T22:51:10.646474315+02:00","level":"INFO","msg":"created new stream","id":"egyc9dh3"}
+{"time":"2025-04-07T22:51:10.64653368+02:00","level":"INFO","msg":"stream: started","id":"egyc9dh3"}
+{"time":"2025-04-07T22:51:10.64654674+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:51:10.646622727+02:00","level":"INFO","msg":"handler: started","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:51:10.646651222+02:00","level":"INFO","msg":"sender: started","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:51:10.957380208+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-07T22:53:04.010064257+02:00","level":"INFO","msg":"stream: closing","id":"egyc9dh3"}
+{"time":"2025-04-07T22:53:04.010150929+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-07T22:53:04.010249474+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-07T22:53:04.767132435+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-07T22:53:05.026572271+02:00","level":"INFO","msg":"handler: closed","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:53:05.026649445+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:53:05.026666067+02:00","level":"INFO","msg":"sender: closed","stream_id":"egyc9dh3"}
+{"time":"2025-04-07T22:53:05.026762238+02:00","level":"INFO","msg":"stream: closed","id":"egyc9dh3"}

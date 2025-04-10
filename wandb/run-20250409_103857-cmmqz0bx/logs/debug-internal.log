@@ -1,0 +1,7 @@
+{"time":"2025-04-09T10:38:57.50036107+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_103857-cmmqz0bx/logs/debug-core.log"}
+{"time":"2025-04-09T10:38:57.761038774+02:00","level":"INFO","msg":"created new stream","id":"cmmqz0bx"}
+{"time":"2025-04-09T10:38:57.761089826+02:00","level":"INFO","msg":"stream: started","id":"cmmqz0bx"}
+{"time":"2025-04-09T10:38:57.761119507+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"cmmqz0bx"}
+{"time":"2025-04-09T10:38:57.761190742+02:00","level":"INFO","msg":"sender: started","stream_id":"cmmqz0bx"}
+{"time":"2025-04-09T10:38:57.761284534+02:00","level":"INFO","msg":"handler: started","stream_id":"cmmqz0bx"}
+{"time":"2025-04-09T10:38:57.973793287+02:00","level":"INFO","msg":"Starting system monitor"}

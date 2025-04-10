@@ -1,0 +1,15 @@
+{"time":"2025-04-09T17:28:03.248740099+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_172803-ry41z2pd/logs/debug-core.log"}
+{"time":"2025-04-09T17:28:03.650241646+02:00","level":"INFO","msg":"created new stream","id":"ry41z2pd"}
+{"time":"2025-04-09T17:28:03.650286759+02:00","level":"INFO","msg":"stream: started","id":"ry41z2pd"}
+{"time":"2025-04-09T17:28:03.650315251+02:00","level":"INFO","msg":"handler: started","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T17:28:03.650311689+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T17:28:03.650309315+02:00","level":"INFO","msg":"sender: started","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T17:28:03.963549378+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-09T18:00:11.576331682+02:00","level":"INFO","msg":"stream: closing","id":"ry41z2pd"}
+{"time":"2025-04-09T18:00:11.576369675+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-09T18:00:11.57640648+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-09T18:00:12.405225238+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-09T18:00:12.611448649+02:00","level":"INFO","msg":"handler: closed","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T18:00:12.611513949+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T18:00:12.611532945+02:00","level":"INFO","msg":"sender: closed","stream_id":"ry41z2pd"}
+{"time":"2025-04-09T18:00:12.61162674+02:00","level":"INFO","msg":"stream: closed","id":"ry41z2pd"}

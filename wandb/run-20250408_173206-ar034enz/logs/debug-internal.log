@@ -1,0 +1,6 @@
+{"time":"2025-04-08T17:32:06.268880457+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250408_173206-ar034enz/logs/debug-core.log"}
+{"time":"2025-04-08T17:32:06.616507387+02:00","level":"INFO","msg":"created new stream","id":"ar034enz"}
+{"time":"2025-04-08T17:32:06.616586943+02:00","level":"INFO","msg":"stream: started","id":"ar034enz"}
+{"time":"2025-04-08T17:32:06.616664124+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"ar034enz"}
+{"time":"2025-04-08T17:32:06.616772177+02:00","level":"INFO","msg":"handler: started","stream_id":"ar034enz"}
+{"time":"2025-04-08T17:32:06.61683036+02:00","level":"INFO","msg":"sender: started","stream_id":"ar034enz"}

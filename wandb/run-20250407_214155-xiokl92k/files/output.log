@@ -1,0 +1,61 @@
+16.08504867553711
+16.03474998474121
+15.357381820678711
+12.68148422241211
+13.950587272644043
+11.088494300842285
+9.979891777038574
+9.334590911865234
+11.741455078125
+9.339397430419922
+9.409285545349121
+12.322916030883789
+10.858978271484375
+9.97366714477539
+9.423992156982422
+10.358707427978516
+10.872808456420898
+10.38923454284668
+10.312800407409668
+10.32234001159668
+11.518731117248535
+10.259714126586914
+8.680681228637695
+6.597606182098389
+6.575943946838379
+8.43879222869873
+9.161294937133789
+11.114047050476074
+10.207337379455566
+8.147254943847656
+8.635465621948242
+7.109005928039551
+7.633906364440918
+9.98513126373291
+7.077327728271484
+7.604118347167969
+5.971672058105469
+9.079537391662598
+7.593489646911621
+13.37585735321045
+6.767573833465576
+6.799314498901367
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 35, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x79281d06ee80>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

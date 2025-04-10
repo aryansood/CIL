@@ -1,0 +1,31 @@
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 3, 256, 256])
+0
+12.949050903320312
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 3, 256, 256])
+0
+12.334349632263184
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 41, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_2.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 944, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 1214, in _save
+    storage = storage.cpu()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/storage.py", line 267, in cpu
+    return torch.UntypedStorage(self.size()).copy_(self, False)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,14 @@
+0
+12.172796249389648
+0
+11.408714294433594
+0
+10.237518310546875
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 38, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    Loss_gradient(outputs, batch_img)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 23, in Loss_gradient
+    dy_targ, dx_targ = torch.gradient(target, dim=(2,3))[:, 0, :, :]
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple

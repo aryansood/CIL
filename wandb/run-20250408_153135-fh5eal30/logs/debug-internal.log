@@ -1,0 +1,15 @@
+{"time":"2025-04-08T15:31:35.366643543+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250408_153135-fh5eal30/logs/debug-core.log"}
+{"time":"2025-04-08T15:31:35.883619107+02:00","level":"INFO","msg":"created new stream","id":"fh5eal30"}
+{"time":"2025-04-08T15:31:35.883708214+02:00","level":"INFO","msg":"stream: started","id":"fh5eal30"}
+{"time":"2025-04-08T15:31:35.883841282+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:35.883910192+02:00","level":"INFO","msg":"handler: started","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:35.883948211+02:00","level":"INFO","msg":"sender: started","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:36.282017124+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-08T15:31:36.79149534+02:00","level":"INFO","msg":"stream: closing","id":"fh5eal30"}
+{"time":"2025-04-08T15:31:36.791563061+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-08T15:31:36.791656919+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-08T15:31:37.813503876+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-08T15:31:38.125635721+02:00","level":"INFO","msg":"handler: closed","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:38.125726012+02:00","level":"INFO","msg":"sender: closed","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:38.125712943+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fh5eal30"}
+{"time":"2025-04-08T15:31:38.125927977+02:00","level":"INFO","msg":"stream: closed","id":"fh5eal30"}

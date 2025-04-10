@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    Loss_gradient(outputs, batch_img)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 33, in Loss_gradient
+    plt.imshow(new_image_tensor.detach().cpu().numpy())
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/pyplot.py", line 3590, in imshow
+    __ret = gca().imshow(
+        X,
+    ...<16 lines>...
+        **kwargs,
+    )
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/__init__.py", line 1521, in inner
+    return func(
+        ax,
+        *map(cbook.sanitize_sequence, args),
+        **{k: cbook.sanitize_sequence(v) for k, v in kwargs.items()})
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/axes/_axes.py", line 5976, in imshow
+    im.set_data(X)
+    ~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/image.py", line 685, in set_data
+    self._A = self._normalize_image_array(A)
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/image.py", line 653, in _normalize_image_array
+    raise TypeError(f"Invalid shape {A.shape} for image data")
+TypeError: Invalid shape (16, 256, 256) for image data

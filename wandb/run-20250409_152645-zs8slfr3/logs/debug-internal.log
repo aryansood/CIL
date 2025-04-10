@@ -1,0 +1,7 @@
+{"time":"2025-04-09T15:26:45.38318092+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_152645-zs8slfr3/logs/debug-core.log"}
+{"time":"2025-04-09T15:26:47.432609725+02:00","level":"INFO","msg":"created new stream","id":"zs8slfr3"}
+{"time":"2025-04-09T15:26:47.432679774+02:00","level":"INFO","msg":"stream: started","id":"zs8slfr3"}
+{"time":"2025-04-09T15:26:47.432743887+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"zs8slfr3"}
+{"time":"2025-04-09T15:26:47.43284243+02:00","level":"INFO","msg":"handler: started","stream_id":"zs8slfr3"}
+{"time":"2025-04-09T15:26:47.432783067+02:00","level":"INFO","msg":"sender: started","stream_id":"zs8slfr3"}
+{"time":"2025-04-09T15:26:47.872548837+02:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    Loss_gradient(outputs, batch_img)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 44, in Loss_gradient
+    ax1.imshow(canny_edge_detector)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/__init__.py", line 1521, in inner
+    return func(
+        ax,
+        *map(cbook.sanitize_sequence, args),
+        **{k: cbook.sanitize_sequence(v) for k, v in kwargs.items()})
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/axes/_axes.py", line 5976, in imshow
+    im.set_data(X)
+    ~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/image.py", line 685, in set_data
+    self._A = self._normalize_image_array(A)
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/image.py", line 646, in _normalize_image_array
+    A = cbook.safe_masked_invalid(A, copy=True)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/matplotlib/cbook.py", line 684, in safe_masked_invalid
+    x = np.array(x, subok=True, copy=copy)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/_tensor.py", line 1194, in __array__
+    return self.numpy()
+           ~~~~~~~~~~^^
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

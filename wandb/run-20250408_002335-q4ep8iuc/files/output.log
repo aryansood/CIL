@@ -1,0 +1,46 @@
+tensor(2.5882, device='cuda:0')
+13.004290580749512
+tensor(7.6078, device='cuda:0')
+13.123780250549316
+tensor(9.9608, device='cuda:0')
+12.593229293823242
+tensor(9.0980, device='cuda:0')
+10.194294929504395
+tensor(9.9608, device='cuda:0')
+11.372337341308594
+tensor(9.9608, device='cuda:0')
+8.900199890136719
+tensor(4.8627, device='cuda:0')
+7.819622993469238
+tensor(2.3922, device='cuda:0')
+7.310014247894287
+tensor(5.4510, device='cuda:0')
+9.559042930603027
+tensor(2.1176, device='cuda:0')
+7.616929054260254
+tensor(5.6078, device='cuda:0')
+7.811844825744629
+tensor(2.9804, device='cuda:0')
+10.458982467651367
+tensor(4.0784, device='cuda:0')
+9.169713020324707
+tensor(3.3725, device='cuda:0')
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 35, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x77bee33cf1a0>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

@@ -1,0 +1,68 @@
+158
+0
+12.040422439575195
+49
+0
+11.551803588867188
+34
+0
+10.17892074584961
+12
+0
+7.844712734222412
+23
+0
+8.077179908752441
+4
+0
+5.831042766571045
+4
+0
+5.211455345153809
+4
+0
+4.634553909301758
+0
+0
+6.107298374176025
+0
+0
+4.368287086486816
+0
+0
+4.685399055480957
+0
+0
+6.562458515167236
+0
+0
+5.524474143981934
+0
+0
+5.012232303619385
+0
+0
+4.533174991607666
+2
+0
+5.228185653686523
+1
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 38, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x760531b3b880>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

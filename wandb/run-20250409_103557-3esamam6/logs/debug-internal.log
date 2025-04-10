@@ -1,0 +1,7 @@
+{"time":"2025-04-09T10:35:57.702455443+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_103557-3esamam6/logs/debug-core.log"}
+{"time":"2025-04-09T10:35:57.956084062+02:00","level":"INFO","msg":"created new stream","id":"3esamam6"}
+{"time":"2025-04-09T10:35:57.956139863+02:00","level":"INFO","msg":"stream: started","id":"3esamam6"}
+{"time":"2025-04-09T10:35:57.95625384+02:00","level":"INFO","msg":"handler: started","stream_id":"3esamam6"}
+{"time":"2025-04-09T10:35:57.956231282+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"3esamam6"}
+{"time":"2025-04-09T10:35:57.956315577+02:00","level":"INFO","msg":"sender: started","stream_id":"3esamam6"}
+{"time":"2025-04-09T10:35:58.145109359+02:00","level":"INFO","msg":"Starting system monitor"}

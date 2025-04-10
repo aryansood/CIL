@@ -1,0 +1,38 @@
+{
+  "os": "Linux-6.11.0-21-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.13.2",
+  "startedAt": "2025-04-09T13:33:26.852878Z",
+  "program": "/home/aryan-sood/Documents/CIL/main.py",
+  "codePath": "main.py",
+  "email": "aryansood972@gmail.com",
+  "root": "/home/aryan-sood/Documents/CIL",
+  "host": "aryan-sood-Legion-Slim-5-14APH8",
+  "executable": "/home/aryan-sood/micromamba/envs/cil_new/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "501809635328",
+      "used": "306385592320"
+    }
+  },
+  "memory": {
+    "total": "32792047616"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.4"
+}
