@@ -29,6 +29,6 @@ class LazyImageDataset(Dataset):
         mask = np.load(mask_pat)
         mask = mask/10
         image = self.transform(image)
-        mask = cv2.resize(mask, (256, 256), interpolation=cv2.INTER_NEAREST)
+        #mask = cv2.resize(mask, (256, 256), interpolation=cv2.INTER_NEAREST)
         mask = to_tensor(mask)
         return image, mask

@@ -1,0 +1,7 @@
+{"time":"2025-04-11T15:04:57.584037008+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_150457-fhafdxgn/logs/debug-core.log"}
+{"time":"2025-04-11T15:04:59.421013591+02:00","level":"INFO","msg":"created new stream","id":"fhafdxgn"}
+{"time":"2025-04-11T15:04:59.421064645+02:00","level":"INFO","msg":"stream: started","id":"fhafdxgn"}
+{"time":"2025-04-11T15:04:59.42109314+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"fhafdxgn"}
+{"time":"2025-04-11T15:04:59.421139445+02:00","level":"INFO","msg":"sender: started","stream_id":"fhafdxgn"}
+{"time":"2025-04-11T15:04:59.421157254+02:00","level":"INFO","msg":"handler: started","stream_id":"fhafdxgn"}
+{"time":"2025-04-11T15:04:59.78564227+02:00","level":"INFO","msg":"Starting system monitor"}

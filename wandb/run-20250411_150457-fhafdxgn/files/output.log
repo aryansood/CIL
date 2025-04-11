@@ -1,0 +1,44 @@
+al cazzooooo:
+tensor(1531517.3750, device='cuda:0', grad_fn=<SubBackward0>)
+0
+1531517.625
+al cazzooooo:
+tensor(1336877.1250, device='cuda:0', grad_fn=<SubBackward0>)
+0
+1336877.25
+al cazzooooo:
+tensor(952265.1250, device='cuda:0', grad_fn=<SubBackward0>)
+0
+952265.1875
+al cazzooooo:
+tensor(804864.4375, device='cuda:0', grad_fn=<SubBackward0>)
+0
+804864.5
+al cazzooooo:
+tensor(nan, device='cuda:0', grad_fn=<SubBackward0>)
+0
+nan
+al cazzooooo:
+tensor(nan, device='cuda:0', grad_fn=<SubBackward0>)
+0
+nan
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 34, in train_net
+    loss1 = Loss_gradient(torch.exp(outputs), batch_mask)
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 39, in Loss_gradient
+    canny_edge_detector_target = torch.where(new_image_tensor < 0.020, torch.tensor(0.0), new_image_tensor)
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x701e25073ba0>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

@@ -1,0 +1,85 @@
+al cazzooooo:
+tensor(93613368., device='cuda:0', grad_fn=<SubBackward0>)
+0
+93613368.0
+al cazzooooo:
+tensor(10645925., device='cuda:0', grad_fn=<SubBackward0>)
+0
+10645925.0
+al cazzooooo:
+tensor(10662647., device='cuda:0', grad_fn=<SubBackward0>)
+0
+10662647.0
+al cazzooooo:
+tensor(11225171., device='cuda:0', grad_fn=<SubBackward0>)
+0
+11225171.0
+al cazzooooo:
+tensor(10194405., device='cuda:0', grad_fn=<SubBackward0>)
+0
+10194405.0
+al cazzooooo:
+tensor(10121138., device='cuda:0', grad_fn=<SubBackward0>)
+0
+10121138.0
+al cazzooooo:
+tensor(9307641., device='cuda:0', grad_fn=<SubBackward0>)
+0
+9307641.0
+al cazzooooo:
+tensor(9200961., device='cuda:0', grad_fn=<SubBackward0>)
+0
+9200961.0
+al cazzooooo:
+tensor(8804436., device='cuda:0', grad_fn=<SubBackward0>)
+0
+8804436.0
+al cazzooooo:
+tensor(9078258., device='cuda:0', grad_fn=<SubBackward0>)
+0
+9078258.0
+al cazzooooo:
+tensor(8682179., device='cuda:0', grad_fn=<SubBackward0>)
+0
+8682179.0
+al cazzooooo:
+tensor(8118246., device='cuda:0', grad_fn=<SubBackward0>)
+0
+8118246.0
+al cazzooooo:
+tensor(8190821., device='cuda:0', grad_fn=<SubBackward0>)
+0
+8190821.0
+al cazzooooo:
+tensor(7958036., device='cuda:0', grad_fn=<SubBackward0>)
+0
+7958036.0
+al cazzooooo:
+tensor(7604484.5000, device='cuda:0', grad_fn=<SubBackward0>)
+0
+7604484.5
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 41, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_7.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x719149a73ba0>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

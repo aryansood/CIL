@@ -1,0 +1,173 @@
+al cazzooooo:
+tensor(0.3871, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.38709449768066406
+al cazzooooo:
+tensor(0.3488, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.3488454818725586
+al cazzooooo:
+tensor(0.3291, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.3291499614715576
+al cazzooooo:
+tensor(0.3339, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.33393123745918274
+al cazzooooo:
+tensor(0.3216, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.32163238525390625
+al cazzooooo:
+tensor(0.3264, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.3263603448867798
+al cazzooooo:
+tensor(0.2956, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2955918312072754
+al cazzooooo:
+tensor(0.3027, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.30272161960601807
+al cazzooooo:
+tensor(0.2699, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2698737382888794
+al cazzooooo:
+tensor(0.2867, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2866937816143036
+al cazzooooo:
+tensor(0.2878, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.28776615858078003
+al cazzooooo:
+tensor(0.2593, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.25927579402923584
+al cazzooooo:
+tensor(0.2605, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2604948878288269
+al cazzooooo:
+tensor(0.2682, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26822274923324585
+al cazzooooo:
+tensor(0.2779, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2779318690299988
+al cazzooooo:
+tensor(0.2720, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.27199244499206543
+al cazzooooo:
+tensor(0.2620, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2620351314544678
+al cazzooooo:
+tensor(0.2641, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26405084133148193
+al cazzooooo:
+tensor(0.2540, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.25396597385406494
+al cazzooooo:
+tensor(0.2716, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.27163392305374146
+al cazzooooo:
+tensor(0.2479, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.24786099791526794
+al cazzooooo:
+tensor(0.2695, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26947328448295593
+al cazzooooo:
+tensor(0.2739, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2739309072494507
+al cazzooooo:
+tensor(0.2815, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.28151941299438477
+al cazzooooo:
+tensor(0.2791, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2791442275047302
+al cazzooooo:
+tensor(0.2686, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2686155140399933
+al cazzooooo:
+tensor(0.2568, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.25677400827407837
+al cazzooooo:
+tensor(0.2510, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2509625554084778
+al cazzooooo:
+tensor(0.2819, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2819231152534485
+al cazzooooo:
+tensor(0.2570, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2569558620452881
+al cazzooooo:
+tensor(0.2553, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2552978992462158
+al cazzooooo:
+tensor(0.2656, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26555314660072327
+al cazzooooo:
+tensor(0.2581, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.2580617368221283
+al cazzooooo:
+tensor(0.2366, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.23663420975208282
+al cazzooooo:
+tensor(0.2824, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.28244712948799133
+al cazzooooo:
+tensor(0.2656, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26560598611831665
+al cazzooooo:
+tensor(0.2936, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.29359278082847595
+al cazzooooo:
+tensor(0.2653, device='cuda:0', grad_fn=<SubBackward0>)
+0
+0.26530706882476807
+al cazzooooo:
+tensor(0.2794, device='cuda:0', grad_fn=<SubBackward0>)
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 38, in train_net
+    running_loss += loss.item()
+                    ~~~~~~~~~^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function _start_and_connect_service.<locals>.teardown_atexit at 0x70ec8ab6bba0>:
+Traceback (most recent call last):
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/lib/service_connection.py", line 226, in teardown
+    self._router.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/wandb/sdk/interface/router.py", line 75, in join
+    self._thread.join()
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/threading.py", line 1092, in join
+    self._handle.join(timeout)
+KeyboardInterrupt:

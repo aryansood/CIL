@@ -62,7 +62,7 @@ class OutConv(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(OutConv, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=1)
-        #self.activation = nn.ReLU()
+        self.activation = nn.ReLU()
 
     def forward(self, x):
         out = self.conv(x)

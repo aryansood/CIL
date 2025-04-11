@@ -1,0 +1,7 @@
+{"time":"2025-04-11T16:35:11.484616386+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_163511-sfx0d2vx/logs/debug-core.log"}
+{"time":"2025-04-11T16:35:13.31252686+02:00","level":"INFO","msg":"created new stream","id":"sfx0d2vx"}
+{"time":"2025-04-11T16:35:13.312573164+02:00","level":"INFO","msg":"stream: started","id":"sfx0d2vx"}
+{"time":"2025-04-11T16:35:13.312647963+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"sfx0d2vx"}
+{"time":"2025-04-11T16:35:13.312954285+02:00","level":"INFO","msg":"sender: started","stream_id":"sfx0d2vx"}
+{"time":"2025-04-11T16:35:13.313055205+02:00","level":"INFO","msg":"handler: started","stream_id":"sfx0d2vx"}
+{"time":"2025-04-11T16:35:13.662704778+02:00","level":"INFO","msg":"Starting system monitor"}

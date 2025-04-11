@@ -1,0 +1,546 @@
+Epoch: 0
+Loss_SI_LOG:  2.940340757369995
+Shape:  torch.Size([16])
+criterion: tensor(2.9553, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.8899837732315063
+Shape:  torch.Size([16])
+criterion: tensor(2.9389, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.6396063566207886
+Shape:  torch.Size([16])
+criterion: tensor(3.0025, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.5878459215164185
+Shape:  torch.Size([16])
+criterion: tensor(3.0757, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.5343935489654541
+Shape:  torch.Size([16])
+criterion: tensor(3.0398, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.5386578440666199
+Shape:  torch.Size([16])
+criterion: tensor(3.2828, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.4756940007209778
+Shape:  torch.Size([16])
+criterion: tensor(3.0409, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.462044358253479
+Shape:  torch.Size([16])
+criterion: tensor(3.1470, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.40226972103118896
+Shape:  torch.Size([16])
+criterion: tensor(2.7863, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.39967402815818787
+Shape:  torch.Size([16])
+criterion: tensor(2.9825, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.38980579376220703
+Shape:  torch.Size([16])
+criterion: tensor(3.0395, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.3077256977558136
+Shape:  torch.Size([16])
+criterion: tensor(2.6276, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.3111077547073364
+Shape:  torch.Size([16])
+criterion: tensor(2.6274, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.28462278842926025
+Shape:  torch.Size([16])
+criterion: tensor(2.6549, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.2810252904891968
+Shape:  torch.Size([16])
+criterion: tensor(2.7736, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.2551402151584625
+Shape:  torch.Size([16])
+criterion: tensor(2.6500, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.2455032467842102
+Shape:  torch.Size([16])
+criterion: tensor(2.5732, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.25126326084136963
+Shape:  torch.Size([16])
+criterion: tensor(2.6040, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.22446757555007935
+Shape:  torch.Size([16])
+criterion: tensor(2.3978, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.2237386405467987
+Shape:  torch.Size([16])
+criterion: tensor(2.5391, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1910003125667572
+Shape:  torch.Size([16])
+criterion: tensor(2.2844, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.2001492977142334
+Shape:  torch.Size([16])
+criterion: tensor(2.4451, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.203818678855896
+Shape:  torch.Size([16])
+criterion: tensor(2.4883, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.198795348405838
+Shape:  torch.Size([16])
+criterion: tensor(2.5419, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.19631898403167725
+Shape:  torch.Size([16])
+criterion: tensor(2.4954, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.18285849690437317
+Shape:  torch.Size([16])
+criterion: tensor(2.3856, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.17286615073680878
+Shape:  torch.Size([16])
+criterion: tensor(2.2572, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.15496386587619781
+Shape:  torch.Size([16])
+criterion: tensor(2.1333, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1745530664920807
+Shape:  torch.Size([16])
+criterion: tensor(2.4466, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1560940146446228
+Shape:  torch.Size([16])
+criterion: tensor(2.2012, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14177650213241577
+Shape:  torch.Size([16])
+criterion: tensor(2.1099, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14261150360107422
+Shape:  torch.Size([16])
+criterion: tensor(2.1847, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14882594347000122
+Shape:  torch.Size([16])
+criterion: tensor(2.1604, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.11994577944278717
+Shape:  torch.Size([16])
+criterion: tensor(1.8590, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14292828738689423
+Shape:  torch.Size([16])
+criterion: tensor(2.3421, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14542712271213531
+Shape:  torch.Size([16])
+criterion: tensor(2.2006, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1449030339717865
+Shape:  torch.Size([16])
+criterion: tensor(2.4191, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.14257410168647766
+Shape:  torch.Size([16])
+criterion: tensor(2.1689, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.12751144170761108
+Shape:  torch.Size([16])
+criterion: tensor(2.2452, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.11293523758649826
+Shape:  torch.Size([16])
+criterion: tensor(1.8334, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10750392079353333
+Shape:  torch.Size([16])
+criterion: tensor(1.9558, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.11831726133823395
+Shape:  torch.Size([16])
+criterion: tensor(2.1030, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1144697368144989
+Shape:  torch.Size([16])
+criterion: tensor(2.1184, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.12144431471824646
+Shape:  torch.Size([16])
+criterion: tensor(2.0925, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.11130040138959885
+Shape:  torch.Size([16])
+criterion: tensor(1.9147, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.1106003150343895
+Shape:  torch.Size([16])
+criterion: tensor(2.0355, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.12042200565338135
+Shape:  torch.Size([16])
+criterion: tensor(2.1661, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10384873300790787
+Shape:  torch.Size([16])
+criterion: tensor(1.9997, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10555452108383179
+Shape:  torch.Size([16])
+criterion: tensor(2.0235, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10085253417491913
+Shape:  torch.Size([16])
+criterion: tensor(1.8873, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09923438727855682
+Shape:  torch.Size([16])
+criterion: tensor(1.9136, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10829693078994751
+Shape:  torch.Size([16])
+criterion: tensor(2.0065, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09496820718050003
+Shape:  torch.Size([16])
+criterion: tensor(1.8881, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09099369496107101
+Shape:  torch.Size([16])
+criterion: tensor(1.8744, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09938526898622513
+Shape:  torch.Size([16])
+criterion: tensor(2.0783, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08043505251407623
+Shape:  torch.Size([16])
+criterion: tensor(1.7637, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07968009263277054
+Shape:  torch.Size([16])
+criterion: tensor(1.6916, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10220347344875336
+Shape:  torch.Size([16])
+criterion: tensor(2.0662, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.10079754889011383
+Shape:  torch.Size([16])
+criterion: tensor(2.1929, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06812530755996704
+Shape:  torch.Size([16])
+criterion: tensor(1.5147, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0776396095752716
+Shape:  torch.Size([16])
+criterion: tensor(1.7306, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08831538259983063
+Shape:  torch.Size([16])
+criterion: tensor(1.9488, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09257738292217255
+Shape:  torch.Size([16])
+criterion: tensor(2.0096, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08376801759004593
+Shape:  torch.Size([16])
+criterion: tensor(1.9181, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09057171642780304
+Shape:  torch.Size([16])
+criterion: tensor(2.0287, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.09133623540401459
+Shape:  torch.Size([16])
+criterion: tensor(1.8706, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07037699222564697
+Shape:  torch.Size([16])
+criterion: tensor(1.6540, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08617457002401352
+Shape:  torch.Size([16])
+criterion: tensor(1.9076, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08589883148670197
+Shape:  torch.Size([16])
+criterion: tensor(2.0719, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06453453004360199
+Shape:  torch.Size([16])
+criterion: tensor(1.6012, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07818460464477539
+Shape:  torch.Size([16])
+criterion: tensor(1.9038, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0710250586271286
+Shape:  torch.Size([16])
+criterion: tensor(1.6677, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08186417818069458
+Shape:  torch.Size([16])
+criterion: tensor(1.9497, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08211654424667358
+Shape:  torch.Size([16])
+criterion: tensor(1.8719, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07476438581943512
+Shape:  torch.Size([16])
+criterion: tensor(1.8033, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07840152084827423
+Shape:  torch.Size([16])
+criterion: tensor(1.7989, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.08549631386995316
+Shape:  torch.Size([16])
+criterion: tensor(1.9954, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0822179913520813
+Shape:  torch.Size([16])
+criterion: tensor(1.9969, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07925505936145782
+Shape:  torch.Size([16])
+criterion: tensor(2.0180, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07192103564739227
+Shape:  torch.Size([16])
+criterion: tensor(1.6823, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07499199360609055
+Shape:  torch.Size([16])
+criterion: tensor(1.8022, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.074008509516716
+Shape:  torch.Size([16])
+criterion: tensor(1.8486, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07303261011838913
+Shape:  torch.Size([16])
+criterion: tensor(1.8911, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0731293261051178
+Shape:  torch.Size([16])
+criterion: tensor(1.8279, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06315487623214722
+Shape:  torch.Size([16])
+criterion: tensor(1.6731, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.07408031076192856
+Shape:  torch.Size([16])
+criterion: tensor(1.9056, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06773093342781067
+Shape:  torch.Size([16])
+criterion: tensor(1.8214, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0691860020160675
+Shape:  torch.Size([16])
+criterion: tensor(1.8779, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06361772865056992
+Shape:  torch.Size([16])
+criterion: tensor(1.7083, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06310416758060455
+Shape:  torch.Size([16])
+criterion: tensor(1.7064, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.060377418994903564
+Shape:  torch.Size([16])
+criterion: tensor(1.5585, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.060312703251838684
+Shape:  torch.Size([16])
+criterion: tensor(1.6582, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05969958379864693
+Shape:  torch.Size([16])
+criterion: tensor(1.5913, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05705615505576134
+Shape:  torch.Size([16])
+criterion: tensor(1.5472, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06437467038631439
+Shape:  torch.Size([16])
+criterion: tensor(1.6452, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05398682877421379
+Shape:  torch.Size([16])
+criterion: tensor(1.4655, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.061678022146224976
+Shape:  torch.Size([16])
+criterion: tensor(1.6243, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06132376566529274
+Shape:  torch.Size([16])
+criterion: tensor(1.7502, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05690791457891464
+Shape:  torch.Size([16])
+criterion: tensor(1.6132, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05427432060241699
+Shape:  torch.Size([16])
+criterion: tensor(1.5112, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05347993224859238
+Shape:  torch.Size([16])
+criterion: tensor(1.5252, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05760178714990616
+Shape:  torch.Size([16])
+criterion: tensor(1.5821, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06071867793798447
+Shape:  torch.Size([16])
+criterion: tensor(1.7410, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05681048706173897
+Shape:  torch.Size([16])
+criterion: tensor(1.6819, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05184498801827431
+Shape:  torch.Size([16])
+criterion: tensor(1.5303, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06070413812994957
+Shape:  torch.Size([16])
+criterion: tensor(1.6444, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05945979058742523
+Shape:  torch.Size([16])
+criterion: tensor(1.7665, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05821039527654648
+Shape:  torch.Size([16])
+criterion: tensor(1.6734, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.059513747692108154
+Shape:  torch.Size([16])
+criterion: tensor(1.6525, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05843351036310196
+Shape:  torch.Size([16])
+criterion: tensor(1.6971, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05819946900010109
+Shape:  torch.Size([16])
+criterion: tensor(1.6757, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.0601109117269516
+Shape:  torch.Size([16])
+criterion: tensor(1.7615, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04930267482995987
+Shape:  torch.Size([16])
+criterion: tensor(1.4110, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.059657346457242966
+Shape:  torch.Size([16])
+criterion: tensor(1.8192, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.054430581629276276
+Shape:  torch.Size([16])
+criterion: tensor(1.5711, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.06379708647727966
+Shape:  torch.Size([16])
+criterion: tensor(1.9416, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05515351518988609
+Shape:  torch.Size([16])
+criterion: tensor(1.6890, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.057507097721099854
+Shape:  torch.Size([16])
+criterion: tensor(1.6853, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.054904088377952576
+Shape:  torch.Size([16])
+criterion: tensor(1.6048, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.049113862216472626
+Shape:  torch.Size([16])
+criterion: tensor(1.5584, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04397767782211304
+Shape:  torch.Size([16])
+criterion: tensor(1.2938, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05290237069129944
+Shape:  torch.Size([16])
+criterion: tensor(1.4782, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05778868496417999
+Shape:  torch.Size([16])
+criterion: tensor(1.5823, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.057427048683166504
+Shape:  torch.Size([16])
+criterion: tensor(1.7537, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05262827128171921
+Shape:  torch.Size([16])
+criterion: tensor(1.5573, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04454023391008377
+Shape:  torch.Size([16])
+criterion: tensor(1.3260, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04495137557387352
+Shape:  torch.Size([16])
+criterion: tensor(1.4224, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04232854023575783
+Shape:  torch.Size([16])
+criterion: tensor(1.3931, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.061055444180965424
+Shape:  torch.Size([16])
+criterion: tensor(1.7750, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.05120233818888664
+Shape:  torch.Size([16])
+criterion: tensor(1.6075, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.043728724122047424
+Shape:  torch.Size([16])
+criterion: tensor(1.3430, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.043110426515340805
+Shape:  torch.Size([16])
+criterion: tensor(1.3818, device='cuda:0', grad_fn=<MeanBackward0>)
+Epoch: 0
+Loss_SI_LOG:  0.04769177734851837
+Shape:  torch.Size([16])
+criterion: tensor(1.5018, device='cuda:0', grad_fn=<MeanBackward0>)
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 44, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_8.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt

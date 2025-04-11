@@ -7,16 +7,15 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib.pyplot as plt
 
-def Si_Log_Loss(output, target):
-    output_log = torch.log(output)
-    target_log = torch.log(target)
-    diff_log = output_log-target_log
-    num_pixels = diff_log[0].numel()
-    term1 = torch.sum(torch.square(diff_log), dim=(2, 3))/num_pixels
-    print((target_log == 0).any())
-    term2 = torch.sum(diff_log)**2/diff_log.numel()**2
-    print(term1)
-    print(term2)
+def Si_Log_Loss(output_log, target):
+    diff_log = output_log-target
+    num_pixel = diff_log[0].numel()
+    term1 = torch.square(diff_log)
+    term1 = torch.mean(term1)
+    term2 = torch.sum(diff_log, dim=(2,3))/num_pixel
+    term2 = torch.square(term2)
+    term2 = torch.mean(term2)
+    
     Loss_average = term1 - 0.5*term2
     return Loss_average
 
@@ -50,6 +49,27 @@ def Loss_gradient(output, target):
     diff_edge = torch.square(output_sim-canny_edge_detector_target)
     diff_edge = torch.sqrt(diff_edge)
     return torch.mean(diff_edge)
+
+def eval_net(output, target):
+    pixel_out = output
+    #assert(pixel_out.shape == (16, 1, 256, 256) and target.shape == (16, 1, 256, 256))
+    pixel_out = pixel_out.squeeze()
+    target = target.squeeze()
+    pixel_targ = torch.log(target)
+    diff_pixel = pixel_out-pixel_targ
+    alpha = torch.mean(diff_pixel, dim=[1,2], keepdim=True)
+    result = diff_pixel+alpha
+    result = torch.square(result)
+    #assert(result.shape == (16, 256, 256))
+    mean = torch.sqrt(torch.mean(result, dim=[1,2]))
+    print("Shape: ", mean.shape)
+    print("mean value:", mean)
+    mean = torch.mean(mean)
+    
+    return(mean)
+
+
+
 
 
 

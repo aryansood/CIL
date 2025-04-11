@@ -1,0 +1,7 @@
+{"time":"2025-04-11T16:37:08.726012281+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_163708-qgaymgbo/logs/debug-core.log"}
+{"time":"2025-04-11T16:37:10.457964513+02:00","level":"INFO","msg":"created new stream","id":"qgaymgbo"}
+{"time":"2025-04-11T16:37:10.45802744+02:00","level":"INFO","msg":"stream: started","id":"qgaymgbo"}
+{"time":"2025-04-11T16:37:10.45805831+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"qgaymgbo"}
+{"time":"2025-04-11T16:37:10.458134297+02:00","level":"INFO","msg":"handler: started","stream_id":"qgaymgbo"}
+{"time":"2025-04-11T16:37:10.458305267+02:00","level":"INFO","msg":"sender: started","stream_id":"qgaymgbo"}
+{"time":"2025-04-11T16:37:10.807681051+02:00","level":"INFO","msg":"Starting system monitor"}

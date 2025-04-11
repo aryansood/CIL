@@ -54,6 +54,7 @@ class restnet_u(nn.Module):
 
         
     def forward(self, x):
+        #with torch.no_grad():
         x0 = self.layer0(x)
         x1 = self.layer1(x0)
         x2 = self.layer2(x1)

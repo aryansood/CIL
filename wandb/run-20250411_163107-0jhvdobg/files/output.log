@@ -1,0 +1,58 @@
+0
+0.5561473369598389
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 1])
+tensor([[1.7700, 1.9776, 1.6177,  ..., 1.7443, 1.4844, 1.7502],
+        [1.7633, 1.8085, 1.5526,  ..., 1.5422, 1.3885, 1.6942],
+        [1.6502, 1.3669, 1.4619,  ..., 1.2238, 1.2661, 1.3952],
+        ...,
+        [2.0216, 1.9577, 2.1923,  ..., 2.3006, 1.6292, 1.6292],
+        [2.3349, 2.2849, 1.9974,  ..., 1.6292, 1.6292, 1.6579],
+        [2.0737, 2.3700, 2.4251,  ..., 1.8790, 1.8750, 1.7569]],
+       device='cuda:0', grad_fn=<SelectBackward0>)
+tensor(1.5578, device='cuda:0', grad_fn=<SelectBackward0>)
+tensor([[3.3278, 3.5354, 3.1755,  ..., 3.3021, 3.0422, 3.3080],
+        [3.3211, 3.3663, 3.1104,  ..., 3.1000, 2.9463, 3.2520],
+        [3.2080, 2.9247, 3.0197,  ..., 2.7816, 2.8239, 2.9530],
+        ...,
+        [3.5794, 3.5155, 3.7501,  ..., 3.8584, 3.1870, 3.1870],
+        [3.8927, 3.8427, 3.5552,  ..., 3.1870, 3.1870, 3.2157],
+        [3.6315, 3.9278, 3.9829,  ..., 3.4368, 3.4328, 3.3147]],
+       device='cuda:0', grad_fn=<SelectBackward0>)
+tensor(2.9108, device='cuda:0', grad_fn=<MeanBackward0>)
+0
+0.46453362703323364
+torch.Size([16, 1, 256, 256])
+torch.Size([16, 1])
+tensor([[1.2738, 1.2445, 1.0195,  ..., 2.6322, 2.4502, 2.6008],
+        [1.2614, 1.1550, 1.0405,  ..., 2.5587, 2.4502, 2.4502],
+        [1.0195, 1.0195, 1.0195,  ..., 2.6024, 2.4502, 2.4502],
+        ...,
+        [1.9437, 1.8819, 1.8777,  ..., 2.5968, 2.5968, 2.5968],
+        [1.9440, 2.1783, 2.0322,  ..., 2.5968, 2.6145, 2.5968],
+        [1.8777, 2.2360, 2.1763,  ..., 2.5968, 2.5968, 2.5968]],
+       device='cuda:0', grad_fn=<SelectBackward0>)
+tensor(1.6254, device='cuda:0', grad_fn=<SelectBackward0>)
+tensor([[2.8993, 2.8699, 2.6449,  ..., 4.2576, 4.0757, 4.2263],
+        [2.8868, 2.7805, 2.6659,  ..., 4.1841, 4.0757, 4.0757],
+        [2.6449, 2.6449, 2.6449,  ..., 4.2278, 4.0757, 4.0757],
+        ...,
+        [3.5692, 3.5074, 3.5031,  ..., 4.2223, 4.2223, 4.2223],
+        [3.5695, 3.8038, 3.6577,  ..., 4.2223, 4.2399, 4.2223],
+        [3.5031, 3.8614, 3.8018,  ..., 4.2223, 4.2223, 4.2223]],
+       device='cuda:0', grad_fn=<SelectBackward0>)
+tensor(2.7765, device='cuda:0', grad_fn=<MeanBackward0>)
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 43, in train_net
+    torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_8.pth')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/aryan-sood/micromamba/envs/cil_new/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt

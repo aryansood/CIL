@@ -1,0 +1,12 @@
+0
+0.25740522146224976
+Traceback (most recent call last):
+  File "/home/aryan-sood/Documents/CIL/main.py", line 50, in <module>
+    train_net(train_dataset, device, num_epochs, wandb)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aryan-sood/Documents/CIL/train.py", line 41, in train_net
+    loss_val = eval_net(outputs, batch_mask)
+  File "/home/aryan-sood/Documents/CIL/loss_def.py", line 58, in eval_net
+    result = diff_pixel+alpha
+             ~~~~~~~~~~^~~~~~
+RuntimeError: The size of tensor a (256) must match the size of tensor b (16) at non-singleton dimension 2
