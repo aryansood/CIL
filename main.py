@@ -10,7 +10,7 @@ from model import UNet
 import matplotlib.pyplot as plt
 import albumentations as albume
 import cv2
-from dataset_create import LazyImageDataset
+from dataset import DepthDataset
 from train import train_net, test_net
 import wandb
 
@@ -43,7 +43,7 @@ transform_array = albume.Compose([
     albume.Resize(256, 256)
 ])
 
-dataset = LazyImageDataset(input_images_files, output_mask_files,transform=transform, transform_numpy=transform_array)
+dataset = DepthDataset(input_images_files, output_mask_files,transform=transform, transform_numpy=transform_array)
 train_size, test_size = int(len(dataset) * 0.8), len(dataset) - (int(len(dataset) * 0.8))
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size], generator=generator)
 #test_net(train_dataset, device, test_size)

@@ -10,8 +10,8 @@ from model import UNet
 import matplotlib.pyplot as plt
 import albumentations as albume
 import cv2
-from dataset_create import LazyImageDataset
-from loss_def import Si_Log_Loss, Loss_gradient, eval_net
+from dataset import DepthDataset
+from loss_def import SILogLoss, GradientLoss, SIRMSELoss
 from model_resnet import restnet_u
 
 
@@ -33,13 +33,13 @@ def train_net(train_dataset, device, num_epoch, wandb):
             outputs = model_u(batch_img)
             #assert(outputs.shape[0] == 16)
             #loss1 = Loss_gradient(torch.exp(outputs), batch_mask)
-            loss = Si_Log_Loss(torch.exp(outputs), batch_mask)#+loss1#criterion(torch.exp(outputs), batch_mask)+loss1#Si_Log_Loss(outputs, batch_mask)#criterion(outputs, batch_mask)
+            loss = SILogLoss(torch.exp(outputs), batch_mask)#+loss1#criterion(torch.exp(outputs), batch_mask)+loss1#Si_Log_Loss(outputs, batch_mask)#criterion(outputs, batch_mask)
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
             print("Epoch:", epoch)
             print("Loss_SI_LOG: ", loss.item())
-            loss_train = eval_net(outputs, batch_mask)
+            loss_train = SIRMSELoss(outputs, batch_mask)
             print("criterion:", loss_train)
             torch.save(model_u.state_dict(),'/home/aryan-sood/Documents/CIL/model_weights_8.pth')
             wandb.log({"loss": loss.item(), "epoch": epoch})
@@ -62,7 +62,7 @@ def test_net(test_dataset, device, test_size):
         with torch.no_grad():
             outputs = model_u(batch_img)
             batch_mask =batch_mask.to('cuda')
-            error = eval_net(outputs, batch_mask)
+            error = SIRMSELoss(outputs, batch_mask)
             print(error)
             avrg += error
     print(avrg/test_size)
