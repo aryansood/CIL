@@ -1,7 +1,0 @@
-{"time":"2025-04-11T15:05:44.328465138+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_150544-vvcpgwlm/logs/debug-core.log"}
-{"time":"2025-04-11T15:05:46.012947094+02:00","level":"INFO","msg":"created new stream","id":"vvcpgwlm"}
-{"time":"2025-04-11T15:05:46.013012396+02:00","level":"INFO","msg":"stream: started","id":"vvcpgwlm"}
-{"time":"2025-04-11T15:05:46.013033767+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"vvcpgwlm"}
-{"time":"2025-04-11T15:05:46.013166744+02:00","level":"INFO","msg":"sender: started","stream_id":"vvcpgwlm"}
-{"time":"2025-04-11T15:05:46.013189303+02:00","level":"INFO","msg":"handler: started","stream_id":"vvcpgwlm"}
-{"time":"2025-04-11T15:05:46.363462515+02:00","level":"INFO","msg":"Starting system monitor"}

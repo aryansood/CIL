@@ -1,8 +1,0 @@
-{"time":"2025-04-11T13:29:30.308636425+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_132930-lfpy9ato/logs/debug-core.log"}
-{"time":"2025-04-11T13:29:32.433360016+02:00","level":"INFO","msg":"created new stream","id":"lfpy9ato"}
-{"time":"2025-04-11T13:29:32.433430066+02:00","level":"INFO","msg":"stream: started","id":"lfpy9ato"}
-{"time":"2025-04-11T13:29:32.433510801+02:00","level":"INFO","msg":"handler: started","stream_id":"lfpy9ato"}
-{"time":"2025-04-11T13:29:32.433535734+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"lfpy9ato"}
-{"time":"2025-04-11T13:29:32.433584412+02:00","level":"INFO","msg":"sender: started","stream_id":"lfpy9ato"}
-{"time":"2025-04-11T13:29:32.881736774+02:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2025-04-11T13:30:18.507475554+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/aryansood972-eth-z-rich/my-pytorch-training/lfpy9ato/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}

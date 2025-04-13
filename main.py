@@ -1,21 +1,16 @@
-import numpy as np
-import os
 import torch
-from torch.utils.data import DataLoader
-from torch.utils.data import Dataset, DataLoader, random_split
-import torch.nn as nn
-from PIL import Image
 from torchvision import transforms
-from model import UNet
-import matplotlib.pyplot as plt
 import albumentations as albume
-import cv2
 from dataset import DepthDataset
 from train import train_net, test_net
-import wandb
+from utils.constants import NUM_EPOCHS, DATA_DIR
+from lightning.pytorch import Trainer, seed_everything
+from lightning.pytorch.callbacks import ModelCheckpoint
+from lightning.pytorch.loggers.wandb import WandbLogger
 
-num_epochs = 2
-directory = '/home/aryan-sood/Documents/CIL/ethz-cil-monocular-depth-estimation-2025/train/train/'
+seed_everything(42, workers=True)
+torch.set_float32_matmul_precision('high')
+
 device = torch.device("cuda")
 
 wandb.init(project="my-pytorch-training")
@@ -24,13 +19,6 @@ wandb.config = {
     "lr": 0.001,
     "batch_size": 64
 }
-
-files = os.listdir(directory)
-input_images_files = [directory+ file for file in files if file.endswith('.png')]
-output_mask_files = [directory+ file for file in files if file.endswith('.npy')]
-
-input_images_files = sorted(input_images_files)
-output_mask_files = sorted(output_mask_files)
 
 generator = torch.Generator().manual_seed(42)
 
@@ -43,8 +31,8 @@ transform_array = albume.Compose([
     albume.Resize(256, 256)
 ])
 
-dataset = DepthDataset(input_images_files, output_mask_files,transform=transform, transform_numpy=transform_array)
+dataset = DepthDataset(DATA_DIR, output_mask_files, transform=transform, transform_numpy=transform_array)
 train_size, test_size = int(len(dataset) * 0.8), len(dataset) - (int(len(dataset) * 0.8))
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size], generator=generator)
 #test_net(train_dataset, device, test_size)
-train_net(train_dataset, device, num_epochs, wandb)
+train_net(train_dataset, device, NUM_EPOCHS, wandb)

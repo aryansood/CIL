@@ -2,3 +2,6 @@ numpy
 torch 
 torchvision 
 torchaudio
+torchmetrics
+torchaudio
+lightning

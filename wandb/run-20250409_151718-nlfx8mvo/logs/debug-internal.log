@@ -1,7 +1,0 @@
-{"time":"2025-04-09T15:17:18.099177031+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_151718-nlfx8mvo/logs/debug-core.log"}
-{"time":"2025-04-09T15:17:20.031459796+02:00","level":"INFO","msg":"created new stream","id":"nlfx8mvo"}
-{"time":"2025-04-09T15:17:20.031512036+02:00","level":"INFO","msg":"stream: started","id":"nlfx8mvo"}
-{"time":"2025-04-09T15:17:20.031526283+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"nlfx8mvo"}
-{"time":"2025-04-09T15:17:20.031564276+02:00","level":"INFO","msg":"handler: started","stream_id":"nlfx8mvo"}
-{"time":"2025-04-09T15:17:20.031590396+02:00","level":"INFO","msg":"sender: started","stream_id":"nlfx8mvo"}
-{"time":"2025-04-09T15:17:20.382525116+02:00","level":"INFO","msg":"Starting system monitor"}
