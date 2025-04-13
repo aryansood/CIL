@@ -52,7 +52,6 @@ class restnet_u(nn.Module):
         self.up5 = (decoder_u_s(128, 64))
         self.outc = (OutConv(64, n_classes))
 
-        
     def forward(self, x):
         #with torch.no_grad():
         x0 = self.layer0(x)
@@ -67,10 +66,4 @@ class restnet_u(nn.Module):
         x = self.up5(x)
         logits = self.outc(x)
         return logits
-#         pass
-# base_model = torchvision.models.resnet50(pretrained=True)
-
-# base_layers = list(base_model.children())
-# for i, layer in enumerate(base_model.children()):
-#     print(i, layer)
 

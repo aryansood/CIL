@@ -7,8 +7,8 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib.pyplot as plt
 
-def Si_Log_Loss(output_log, target):
-    diff_log = output_log-target
+def Si_Log_Loss(output, target):
+    diff_log = torch.log(output)-torch.log(target)
     num_pixel = diff_log[0].numel()
     term1 = torch.square(diff_log)
     term1 = torch.mean(term1)
@@ -35,39 +35,78 @@ def Loss_gradient(output, target):
 
     canny_edge_detector_target = torch.where(new_image_tensor < 0.020, torch.tensor(0.0), new_image_tensor)
 
-    
     # fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
     # ax1.imshow(canny_edge_detector_target[0].detach().cpu().numpy())
     # ax2.imshow(target[0][0].detach().cpu().numpy())
     # plt.show()
-
-    # diff_y = (dy_targ-dy_out)**2
-    # diff_x = (dx_targ-dx_out)**2
-
-    # diff_x_mean = torch.mean(diff_x)
-    # diff_y_mean = torch.mean(diff_y)
     diff_edge = torch.square(output_sim-canny_edge_detector_target)
     diff_edge = torch.sqrt(diff_edge)
     return torch.mean(diff_edge)
 
 def eval_net(output, target):
     pixel_out = output
-    #assert(pixel_out.shape == (16, 1, 256, 256) and target.shape == (16, 1, 256, 256))
     pixel_out = pixel_out.squeeze()
     target = target.squeeze()
     pixel_targ = torch.log(target)
     diff_pixel = pixel_out-pixel_targ
     alpha = torch.mean(diff_pixel, dim=[1,2], keepdim=True)
-    result = diff_pixel+alpha
+    result = diff_pixel-alpha
     result = torch.square(result)
-    #assert(result.shape == (16, 256, 256))
     mean = torch.sqrt(torch.mean(result, dim=[1,2]))
-    print("Shape: ", mean.shape)
-    print("mean value:", mean)
     mean = torch.mean(mean)
-    
-    return(mean)
+    return mean
 
+def loss_smrse(output, target):
+    pixel_out = output
+    pixel_out = pixel_out.squeeze()
+    target = target.squeeze()
+    pixel_targ = torch.log(target)
+    diff_pixel = pixel_out-pixel_targ
+    alpha = torch.mean(diff_pixel, dim=[1,2], keepdim=True)
+    result = diff_pixel-alpha
+    result = torch.square(result)
+    mean = torch.mean(result, dim=[1,2])
+    mean = torch.mean(mean)
+    return mean
+
+def eval_net_test(output, target):
+    pixel_out = output
+    pixel_out = pixel_out.squeeze()
+    target = target.squeeze()
+    pixel_targ = torch.log(target)
+    diff_pixel = pixel_out-pixel_targ
+    alpha = torch.mean(diff_pixel, dim=[1,2], keepdim=True)
+    result = diff_pixel-alpha
+    result = torch.square(result)
+    mean = torch.sqrt(torch.mean(result, dim=[1,2]))
+    #mean = torch.sum(mean)
+    #mean = torch.mean(mean)
+    return mean
+
+def SIRMSELoss(output, target, check_shape=False):
+    """
+    Scale-Invariant RSME Loss. more info: https://www.kaggle.com/competitions/ethz-cil-monocular-depth-estimation-2025/overview
+
+    target,output shape: (B, C, H, W) = (B, 1, H, W)
+    - Batch B
+    - Channels C = 1
+    - Heigth H
+    - Width W
+    """
+    #assert(pixel_out.shape == (16, 1, 256, 256) and target.shape == (16, 1, 256, 256))
+
+    output_logits = torch.log(output.squeeze())
+    target_logits = torch.log(target.squeeze())
+
+    delta_log_diff = output_logits - target_logits
+    alpha = torch.mean(-delta_log_diff, dim=[1,2], keepdim=True)
+
+    summand = torch.square(delta_log_diff + alpha)
+    batch_loss = torch.sqrt(torch.mean(summand, dim=[1,2]))
+
+    loss = torch.mean(batch_loss)
+    
+    return batch_loss
 
 
 

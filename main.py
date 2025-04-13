@@ -1,20 +1,14 @@
 import numpy as np
 import os
 import torch
-from torch.utils.data import DataLoader
-from torch.utils.data import Dataset, DataLoader, random_split
-import torch.nn as nn
-from PIL import Image
+from torch.utils.data import random_split
 from torchvision import transforms
-from model import UNet
-import matplotlib.pyplot as plt
-import albumentations as albume
-import cv2
 from dataset_create import LazyImageDataset
-from train import train_net, test_net
+from train import train_net
+from test import test_net
 import wandb
 
-num_epochs = 2
+num_epochs = 4
 directory = '/home/aryan-sood/Documents/CIL/ethz-cil-monocular-depth-estimation-2025/train/train/'
 device = torch.device("cuda")
 
@@ -39,12 +33,9 @@ transform = transforms.Compose([
     transforms.ToTensor()
 ])
 
-transform_array = albume.Compose([
-    albume.Resize(256, 256)
-])
-
-dataset = LazyImageDataset(input_images_files, output_mask_files,transform=transform, transform_numpy=transform_array)
+dataset = LazyImageDataset(input_images_files, output_mask_files,transform=transform)
 train_size, test_size = int(len(dataset) * 0.8), len(dataset) - (int(len(dataset) * 0.8))
+print(test_size)
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size], generator=generator)
-#test_net(train_dataset, device, test_size)
-train_net(train_dataset, device, num_epochs, wandb)
+test_net(test_dataset, device, test_size)
+#train_net(train_dataset, device, num_epochs, test_dataset, wandb)
