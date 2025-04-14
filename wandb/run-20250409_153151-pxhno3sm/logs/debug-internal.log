@@ -1,7 +1,0 @@
-{"time":"2025-04-09T15:31:51.323630192+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_153151-pxhno3sm/logs/debug-core.log"}
-{"time":"2025-04-09T15:31:51.927383863+02:00","level":"INFO","msg":"created new stream","id":"pxhno3sm"}
-{"time":"2025-04-09T15:31:51.927487143+02:00","level":"INFO","msg":"stream: started","id":"pxhno3sm"}
-{"time":"2025-04-09T15:31:51.927545312+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"pxhno3sm"}
-{"time":"2025-04-09T15:31:51.927658088+02:00","level":"INFO","msg":"handler: started","stream_id":"pxhno3sm"}
-{"time":"2025-04-09T15:31:51.927667585+02:00","level":"INFO","msg":"sender: started","stream_id":"pxhno3sm"}
-{"time":"2025-04-09T15:31:52.237833689+02:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,11 +1,2 @@
 ethz-cil-monocular-depth-estimation-2025
-wandb
-model_weights.pth
-model_weights_1.pth
-model_weights_2.pth
-model_weights_3.pth
-model_weights_4.pth
-model_weights_5.pth
-model_weights_6.pth
-model_weights_11.pth
-model_weights_12.pth
+weights

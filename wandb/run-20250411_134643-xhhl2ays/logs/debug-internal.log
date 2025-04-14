@@ -1,7 +1,0 @@
-{"time":"2025-04-11T13:46:43.340725601+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250411_134643-xhhl2ays/logs/debug-core.log"}
-{"time":"2025-04-11T13:46:45.169695809+02:00","level":"INFO","msg":"created new stream","id":"xhhl2ays"}
-{"time":"2025-04-11T13:46:45.169736178+02:00","level":"INFO","msg":"stream: started","id":"xhhl2ays"}
-{"time":"2025-04-11T13:46:45.169749239+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"xhhl2ays"}
-{"time":"2025-04-11T13:46:45.169787234+02:00","level":"INFO","msg":"sender: started","stream_id":"xhhl2ays"}
-{"time":"2025-04-11T13:46:45.169867974+02:00","level":"INFO","msg":"handler: started","stream_id":"xhhl2ays"}
-{"time":"2025-04-11T13:46:45.630523858+02:00","level":"INFO","msg":"Starting system monitor"}

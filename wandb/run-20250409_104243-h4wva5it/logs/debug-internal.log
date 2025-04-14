@@ -1,7 +1,0 @@
-{"time":"2025-04-09T10:42:43.124044232+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_104243-h4wva5it/logs/debug-core.log"}
-{"time":"2025-04-09T10:42:43.469112229+02:00","level":"INFO","msg":"created new stream","id":"h4wva5it"}
-{"time":"2025-04-09T10:42:43.469178715+02:00","level":"INFO","msg":"stream: started","id":"h4wva5it"}
-{"time":"2025-04-09T10:42:43.469273694+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"h4wva5it"}
-{"time":"2025-04-09T10:42:43.469318809+02:00","level":"INFO","msg":"handler: started","stream_id":"h4wva5it"}
-{"time":"2025-04-09T10:42:43.469342554+02:00","level":"INFO","msg":"sender: started","stream_id":"h4wva5it"}
-{"time":"2025-04-09T10:42:43.696686121+02:00","level":"INFO","msg":"Starting system monitor"}

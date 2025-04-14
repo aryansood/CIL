@@ -1,7 +1,0 @@
-{"time":"2025-04-09T10:38:25.527810751+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/aryan-sood/Documents/CIL/wandb/run-20250409_103825-nvcebma5/logs/debug-core.log"}
-{"time":"2025-04-09T10:38:25.782368459+02:00","level":"INFO","msg":"created new stream","id":"nvcebma5"}
-{"time":"2025-04-09T10:38:25.782424259+02:00","level":"INFO","msg":"stream: started","id":"nvcebma5"}
-{"time":"2025-04-09T10:38:25.782487183+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"nvcebma5"}
-{"time":"2025-04-09T10:38:25.782554857+02:00","level":"INFO","msg":"sender: started","stream_id":"nvcebma5"}
-{"time":"2025-04-09T10:38:25.782604721+02:00","level":"INFO","msg":"handler: started","stream_id":"nvcebma5"}
-{"time":"2025-04-09T10:38:25.981440161+02:00","level":"INFO","msg":"Starting system monitor"}
