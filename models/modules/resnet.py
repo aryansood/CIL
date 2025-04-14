@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision 
-from unet_parts import *
+from .unet import *
 
 class DecoderModuleU(nn.Module):
     def __init__(self, in_channels, out_channels):

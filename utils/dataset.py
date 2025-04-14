@@ -4,40 +4,60 @@ import random
 import numpy as np
 from PIL import Image
 from torchvision import transforms
-from torch.utils.data import Dataset
-
+from torch.utils.data import Dataset, Subset
+import pandas as pd
+from typing import List
+import albumentations as A
 
 class DepthDataset(Dataset):
-    def __init__(self, data_dir, transform=None, target_transform=None, has_gt=True):
+    def __init__(self, 
+                 data_dir, 
+                 has_gt=True,
+                 augmentations: List[A.BasicTransform] = [A.Compose([])]):
+        
         self.data_dir = data_dir
-        self.transform = transform
-        self.target_transform = target_transform
         self.has_gt = has_gt
+        self.augmentations = augmentations
         
         data_paths = os.listdir(data_dir)
         self.rgb_paths   = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.png')])
         self.depth_paths = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.npy')])
+        self.df: pd.DataFrame = pd.DataFrame().from_dict(
+            {"rgb": self.rgb_paths, "depth": self.depth_paths}
+        )
+        aug_len = len(self.augmentations) if self.augmentations is not None else 0
+        aug_columns = pd.DataFrame().from_dict({
+                "aug_id": [i//len(self.df) for i in range(0, len(self.df)*(aug_len))]
+            }
+        )
+        replicated = pd.DataFrame(np.repeat(self.df.values, aug_len, axis=0), columns=["rgb", "depth"])
+        self.df = pd.concat([replicated, aug_columns], axis=1)
+
 
     def __len__(self):
-        return len(self.rgb_paths)
+        return len(self.df)
     
     def __getitem__(self, idx):
         
-        rgb = Image.open(self.rgb_paths[idx]).convert('RGB')
+        rgb_path = self.df.iloc[idx]["rgb"]
+        rgb = np.array(Image.open(rgb_path).convert('RGB'))
         
         if self.has_gt:
-            depth = np.load(self.depth_paths[idx]).astype(np.float32)
-            depth = torch.from_numpy(depth)
-            
-            if self.transform:        rgb = self.transform(rgb)
-            if self.target_transform: depth = self.target_transform(depth)
-            
+            depth_path = self.df.iloc[idx]["depth"]
+            depth = np.load(depth_path).astype(np.float32)
+            #depth = torch.from_numpy(depth)
+
+            aug_idx = self.df.iloc[idx]["aug_id"]
+            augmentation = self.augmentations[aug_idx]
+            augmented = augmentation(image=rgb, mask=depth)
+            rgb, depth = augmented["image"], augmented["mask"]
+
             # rgb_image, ground truth and image_path (might be needed for saving output +samples)
-            return rgb, depth, self.rgb_paths[idx][0] #
+            return rgb, depth, rgb_path 
         
         else:
-            return rgb, self.rgb_paths[idx]  
-
+            return rgb, rgb_path
+    
     def randomize(self):
         if self.has_gt:
             joint_pairs = list(zip(self.rgb_paths, self.depth_paths))
@@ -51,7 +71,7 @@ class DepthDataset(Dataset):
 if __name__ == '__main__':
     # Example Usage
     from torch.utils.data import random_split
-    from constants import DATA_DIR
+    from .constants import DATA_DIR
 
     dataset = DepthDataset(DATA_DIR, transform=None, target_transform=None, has_gt=True)
     train_dataset, test_dataset = random_split(dataset, [0.8,0.2], torch.Generator().manual_seed(42))

@@ -5,14 +5,14 @@ import time
 import shutil
 from datetime import datetime
 from pathlib import Path
-import constants as c
+import constants as C
 
 class Submission:
     def __init__(self, description="No Description"):
         self.cwd = Path.cwd()
         self.uuid = uuid.uuid4()
         self.description = description
-        self.base_path = Path(c.SNAPSHOTS_DIR) / f"run-{self.uuid}"
+        self.base_path = Path(C.SNAPSHOTS_DIR) / f"run-{self.uuid}"
         self.output_id = 0        
         
         self.ensure_dir(self.base_path)
@@ -25,7 +25,7 @@ class Submission:
 
     def reproduce_code(self):
         code_base_path = self.base_path / "code"
-        code_list = [code_path.relative_to(self.cwd) for code_path in Path(self.cwd).rglob("*.py") if not re.match(c.SNAPSHOTS_DIR, str(code_path))]
+        code_list = [code_path.relative_to(self.cwd) for code_path in Path(self.cwd).rglob("*.py") if not re.match(C.SNAPSHOTS_DIR, str(code_path))]
         
         for code_path in code_list:
             self.ensure_dir((code_base_path / code_path).parent)

@@ -6,4 +6,4 @@ DATA_DIR = 'data/'
 SNAPSHOTS_DIR = 'reproducibility/'
 
 # Height and Width of the images
-W, H = 540, 426
+W, H = 560, 426

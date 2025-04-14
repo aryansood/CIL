@@ -1,7 +1,10 @@
 numpy
 torch 
 torchvision 
-torchaudio
 torchmetrics
-torchaudio
 lightning
+einops
+wandb
+albumentations
+pandas
+torchinfo
