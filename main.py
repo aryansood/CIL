@@ -30,6 +30,7 @@ transforms_mask = transforms.Compose([
 
 dataset = TrainImageDataset(input_images_files, output_mask_files,transform=transform_rgb, transform_mask=transforms_mask)
 train_size, test_size = int(len(dataset) * 0.8), len(dataset) - (int(len(dataset) * 0.8))
+
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size], generator=seed_generator)
 dataloader_train = DataLoader(train_dataset, batch_size=4, shuffle=False, num_workers=4, pin_memory=False)
 train_resnet_transf_unet(dataloader_train, device, num_epochs)

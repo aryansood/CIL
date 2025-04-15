@@ -38,7 +38,7 @@ def GradientLossLog(output, target, is_output_logarithm = False):
     the log of the image
     """
     output = torch.log(output) if not is_output_logarithm else output
-    target = torch.log(output)
+    target = torch.log(target)
     dy_targ, dx_targ = torch.gradient(target, dim=(2,3))
     dy_out, dx_out = torch.gradient(output, dim=(2,3))
     dy_targ = dy_targ[:, 0, :, :]

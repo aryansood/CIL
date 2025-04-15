@@ -53,9 +53,9 @@ class ResnetTransformerUnet(nn.Module):
         self.layer2 = self.base_layers[5]
         self.layer3 = self.base_layers[6]
         self.layer4 = self.base_layers[7]
-        self.encoder_layer1 = nn.TransformerEncoderLayer(2048, 1, batch_first=True)
-        self.encoder_layer2 = nn.TransformerEncoderLayer(2048, 1, batch_first=True)
-        self.encoder_layer3 = nn.TransformerEncoderLayer(2048, 1, batch_first=True)
+        self.encoder_layer1 = nn.TransformerEncoderLayer(2048, 8, batch_first=True)
+        self.encoder_layer2 = nn.TransformerEncoderLayer(2048, 8, batch_first=True)
+        self.encoder_layer3 = nn.TransformerEncoderLayer(2048, 8, batch_first=True)
         self.up1 = (DecoderUnetSkip(3072, 1024))
         self.up2 = (DecoderUnetSkip(1536, 512))
         self.up3 = (DecoderUnetSkip(768, 256))
@@ -78,7 +78,6 @@ class ResnetTransformerUnet(nn.Module):
         x4 = self.encoder_layer2(x4)
         x4 = self.encoder_layer3(x4)
         x4 = torch.transpose(x4, 1, 2)
-        print("Shape x4:", x4.shape)
         x4 = x4.reshape(x4.shape[0], x4.shape[1], tensor_heigth, tensor_width)
         x = self.up1(x4, x3)
         x = self.up2(x, x2)

@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import albumentations as albume
 import cv2
 from data_loader import TrainImageDataset
-from loss_def import SILogLoss
+from loss_def import SILogLoss, GradientLossLog, SIRMSELoss
 from models import ResnetUnetDecoder, ResnetTransformerUnet
 
 
@@ -39,12 +39,14 @@ def train_resnet_transf_unet(dataloader, device, num_epoch, wandb = None):
             batch_mask = batch_mask.to(device)
             optimizer.zero_grad()
             outputs = model(batch_img)
-            loss = SILogLoss(outputs, batch_mask)
+            loss_fake_val = SIRMSELoss(outputs, batch_mask)
+            loss = SILogLoss(outputs, batch_mask) + 0.5*GradientLossLog(outputs, batch_mask)
             loss.backward()
             optimizer.step()
             print("Epoch:", epoch)
             print("Loss_SI: ", loss.item())
-            torch.save(model.state_dict(),'weights/model_weights_12.pth')
+            print("Loss SIRM: ", loss_fake_val)
+            torch.save(model.state_dict(),'weights/model_weights.pth')
             if wandb != None:
                 pass
                 #wandb.log({"loss": loss.item(), "epoch": epoch})
