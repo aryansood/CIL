@@ -1,8 +1,8 @@
 import torch
 from utils.dataset import DepthDataset
 from utils.constants import DATA_DIR
-from lightning.pytorch import Trainer, seed_everything
-from lightning.pytorch.callbacks import ModelCheckpoint
+from lightning.pytorch import Trainer, seed_everything  
+from lightning.pytorch.callbacks import ModelCheckpoint, Timer
 from lightning.pytorch.loggers.wandb import WandbLogger
 from torch.utils.data import random_split
 from torch.utils.data import DataLoader
@@ -12,16 +12,19 @@ import utils.constants as C
 import albumentations as A
 from pathlib import Path
 from typing import List
+from datetime import timedelta
 
 def begin_training_loop(
     model: DepthEstimationBase,
     data_dir: Path,
     augmentations: List[A.BasicTransform],
-    batch_size: int = 4,
-    num_worker: int = 16,
+    batch_size: int = 2,
+    num_worker: int = 4,
     num_epochs: int = 5,
     random_seed: int = 80,
-):
+    check_point_every_step: int = 500,
+    debugging: bool = False,
+    max_training_duration: timedelta = timedelta(hours=4)):
     seed_everything(random_seed, workers=True)
     torch.set_float32_matmul_precision('high')
 
@@ -35,16 +38,40 @@ def begin_training_loop(
     summary(model, input_size=(batch_size, 3, C.H, C.W))
 
     wandb_logger = WandbLogger(project='monocular_depth_estimation')
-    checkpoint = ModelCheckpoint(monitor="valid_silog_loss", 
-                                 save_top_k=2,
-                                 mode="max", 
-                                 filename=model.name+"_checkpoint--{epoch}-{name}-{valid_silog_loss:.4f}")
 
-    trainer = Trainer(
-        max_epochs=num_epochs,
-        logger=wandb_logger,
-        callbacks=[checkpoint],
-        deterministic=False
+    #callbacks
+    validation_checkpoint = ModelCheckpoint(monitor="valid_silog_loss", 
+                                 save_top_k=2,
+                                 mode="min", 
+                                 filename=model.name+"_checkpoint--{epoch}-{valid_silog_loss:.4f}")
+    latest_checkpoint = ModelCheckpoint(
+        monitor="step",
+        mode="max",
+        every_n_train_steps=check_point_every_step,
+        save_top_k=2,
+        filename=model.name+"_checkpoint-{epoch}-{step}-{train_silog_loss:.4f}"
     )
+    timer = Timer(
+        duration=max_training_duration
+    )
+
+    if debugging:
+        trainer = Trainer(
+            max_epochs=num_epochs,
+            logger=wandb_logger,
+            callbacks=[timer],
+            deterministic=False,
+            overfit_batches=2,
+            detect_anomaly=True
+        )
+    else:
+        trainer = Trainer(
+            max_epochs=num_epochs,
+            logger=wandb_logger,
+            callbacks=[validation_checkpoint, 
+                    latest_checkpoint,
+                    timer],
+            deterministic=False,
+        )
 
     trainer.fit(model, train_loader, val_loader)

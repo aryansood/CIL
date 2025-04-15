@@ -1,4 +1,5 @@
 import lightning as L
+from lightning.pytorch.utilities import grad_norm
 import torch
 
 from utils.losses import SILogLoss, SIRMSELoss
@@ -20,7 +21,7 @@ class DepthEstimationBase(L.LightningModule):
     def training_step(self, batch, batch_idx):
         X, Y, _ = batch
         Y_prob = self(X)
-
+        
         silog = self.criterionSILog(Y_prob, Y)
         sirme = self.criterionSIRME(Y_prob, Y)
         self.log('train_silog_loss', silog, prog_bar=True)
@@ -36,7 +37,6 @@ class DepthEstimationBase(L.LightningModule):
         # assert torch.all((Y_prob >= 0) & (Y_prob <= 1)), "Input values should be in the range [0, 1]"
         # assert torch.all((Y == 0) | (Y == 1)), "Target values should be 0 or 1"
         # assert Y_prob.shape == Y.shape, "Input and target must have the same shape"
-
         silog = self.criterionSILog(Y_prob, Y)
         sirme = self.criterionSIRME(Y_prob, Y)
         self.log('valid_silog_loss', silog, prog_bar=True)
@@ -55,7 +55,13 @@ class DepthEstimationBase(L.LightningModule):
         self.log('test_sirme_loss', sirme, prog_bar=True)
 
         return sirme
+    
+    def on_before_optimizer_step(self, _):
+        norms = grad_norm(self,norm_type=2)
+        self.log_dict(norms)
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=1e-3)
+        optimizer = torch.optim.Adam(self.parameters(), 
+                                     lr=self.learning_rate, 
+                                     )
         return optimizer

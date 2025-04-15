@@ -6,3 +6,4 @@ data
 reproducibility/**run**
 monocular_depth_estimation
 scratch.py
+__pycache__/
