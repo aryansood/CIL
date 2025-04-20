@@ -18,6 +18,9 @@ def begin_training_loop(
     model: DepthEstimationBase,
     data_dir: Path,
     augmentations: List[A.BasicTransform],
+    random_split: bool = True,
+    train_split = None,
+    val_split = None,
     batch_size: int = 2,
     num_worker: int = 4,
     num_epochs: int = 5,
@@ -30,7 +33,11 @@ def begin_training_loop(
 
 
     dataset = DepthDataset(data_dir=data_dir, augmentations=augmentations)
-    train_dataset, val_dataset = random_split(dataset, [0.8, 0.2])
+    if (random_split):
+        train_dataset, val_dataset = random_split(dataset, [0.8, 0.2])
+    else:
+        train_dataset = DepthDataset(data_dir=data_dir, data_paths=train_split, augmentations=augmentations)
+        val_dataset = DepthDataset(data_dir=data_dir, data_paths=val_split, augmentations=augmentations)
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_worker)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_worker)
@@ -40,7 +47,7 @@ def begin_training_loop(
     wandb_logger = WandbLogger(project='monocular_depth_estimation')
 
     #callbacks
-    validation_checkpoint = ModelCheckpoint(monitor="valid_silog_loss", 
+    validation_checkpoint = ModelCheckpoint(monitor="valid_sirme_loss", 
                                  save_top_k=2,
                                  mode="min", 
                                  filename=model.name+"_checkpoint--{epoch}-{valid_silog_loss:.4f}")

@@ -8,10 +8,12 @@ from torch.utils.data import Dataset, Subset
 import pandas as pd
 from typing import List
 import albumentations as A
+from pathlib import Path
 
 class DepthDataset(Dataset):
     def __init__(self, 
-                 data_dir, 
+                 data_dir,
+                 data_paths = None, 
                  has_gt=True,
                  augmentations: List[A.BasicTransform] = [A.Compose([])]):
         
@@ -19,19 +21,38 @@ class DepthDataset(Dataset):
         self.has_gt = has_gt
         self.augmentations = augmentations
         
-        data_paths = os.listdir(data_dir)
-        self.rgb_paths   = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.png')])
-        self.depth_paths = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.npy')])
-        self.df: pd.DataFrame = pd.DataFrame().from_dict(
-            {"rgb": self.rgb_paths, "depth": self.depth_paths}
-        )
-        aug_len = len(self.augmentations) if self.augmentations is not None else 0
-        aug_columns = pd.DataFrame().from_dict({
-                "aug_id": [i//len(self.df) for i in range(0, len(self.df)*(aug_len))]
-            }
-        )
-        replicated = pd.DataFrame(np.repeat(self.df.values, aug_len, axis=0), columns=["rgb", "depth"])
-        self.df = pd.concat([replicated, aug_columns], axis=1)
+        if (data_paths is None):
+            data_paths = os.listdir(data_dir)
+        self.augment = True
+        if (augmentations is None):
+            self.augment = False
+
+        self.rgb_paths = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.png')])
+        if self.has_gt:
+            self.depth_paths = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.npy')])
+            self.df: pd.DataFrame = pd.DataFrame().from_dict(
+                {"rgb": self.rgb_paths, "depth": self.depth_paths}
+            )
+            if (self.augment):
+                aug_len = len(self.augmentations) if self.augmentations is not None else 0
+                aug_columns = pd.DataFrame().from_dict({
+                        "aug_id": [i//len(self.df) for i in range(0, len(self.df)*(aug_len))]
+                    }
+                )
+                replicated = pd.DataFrame(np.repeat(self.df.values, aug_len, axis=0), columns=["rgb", "depth"])
+                self.df = pd.concat([replicated, aug_columns], axis=1)
+        else:
+            self.df: pd.DataFrame = pd.DataFrame().from_dict(
+                {"rgb": self.rgb_paths}
+            )
+            if (self.augment):
+                aug_len = len(self.augmentations) if self.augmentations is not None else 0
+                aug_columns = pd.DataFrame().from_dict({
+                        "aug_id": [i//len(self.df) for i in range(0, len(self.df)*(aug_len))]
+                    }
+                )
+                replicated = pd.DataFrame(np.repeat(self.df.values, aug_len, axis=0), columns=["rgb"])
+                self.df = pd.concat([replicated, aug_columns], axis=1) 
 
 
     def __len__(self):
@@ -46,16 +67,21 @@ class DepthDataset(Dataset):
             depth_path = self.df.iloc[idx]["depth"]
             depth = np.load(depth_path).astype(np.float32)
             #depth = torch.from_numpy(depth)
-
-            aug_idx = self.df.iloc[idx]["aug_id"]
-            augmentation = self.augmentations[aug_idx]
-            augmented = augmentation(image=rgb, mask=depth)
-            rgb, depth = augmented["image"], augmented["mask"]
+            if self.augment:
+                aug_idx = self.df.iloc[idx]["aug_id"]
+                augmentation = self.augmentations[aug_idx]
+                augmented = augmentation(image=rgb, mask=depth)
+                rgb, depth = augmented["image"], augmented["mask"]
 
             # rgb_image, ground truth and image_path (might be needed for saving output +samples)
             return rgb, depth, rgb_path 
         
         else:
+            if self.augment:
+                aug_idx = self.df.iloc[idx]["aug_id"]
+                augmentation = self.augmentations[aug_idx]
+                augmented = augmentation(image=rgb)
+                rgb = augmented["image"]
             return rgb, rgb_path
     
     def randomize(self):

@@ -14,7 +14,7 @@ class ResnetTransformerUnet(DepthEstimationBase):
     Model doing the following: Resnet+transformer+decoder.
     """
     def __init__(self, learning_rate):
-        super().__init__(learning_rate=learning_rate, name="resnet_transformer_unet")
+        super().__init__(learning_rate=learning_rate, name="resnet_unet")
         self.resnet50 = torchvision.models.resnet50(weights=torchvision.models.ResNet50_Weights.DEFAULT)
         self.base_layers = list(self.resnet50.children())
         self.layer0 = nn.Sequential(*self.base_layers[:3])
