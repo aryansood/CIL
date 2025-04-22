@@ -50,7 +50,7 @@ def begin_training_loop(
     validation_checkpoint = ModelCheckpoint(monitor="valid_sirme_loss", 
                                  save_top_k=2,
                                  mode="min", 
-                                 filename=model.name+"_checkpoint--{epoch}-{valid_silog_loss:.4f}")
+                                 filename=model.name+"_checkpoint--{epoch}-{valid_sirme_loss:.4f}")
     latest_checkpoint = ModelCheckpoint(
         monitor="step",
         mode="max",
