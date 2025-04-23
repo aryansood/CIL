@@ -1,5 +1,5 @@
-import lightning as L
-from lightning.pytorch.utilities import grad_norm
+import pytorch_lightning as L
+from pytorch_lightning.utilities import grad_norm
 import torch
 
 from utils.losses import SILogLoss, SIRMSELoss

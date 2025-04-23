@@ -1,10 +1,9 @@
 import torch
 import torch.nn as nn
-import lightning as L
 from .modules.vit import ViT
 import torch.nn.functional as F
 from .base_model import DepthEstimationBase
-from lightning.pytorch.utilities import grad_norm
+from pytorch_lightning.utilities import grad_norm
 
 class UpSampleLayer(nn.Module):
     def __init__(self, in_channels, out_channels):

@@ -1,10 +1,7 @@
 import torch
 import torch.nn as nn
-import lightning as L
-from .modules.vit import ViT
 import torch.nn.functional as F
 from .base_model import DepthEstimationBase
-from lightning.pytorch.utilities import grad_norm
 import torchvision
 from .modules.models_parts import *
 

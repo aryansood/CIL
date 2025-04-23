@@ -6,15 +6,21 @@ class SegFormerDepthEstimator(DepthEstimationBase):
 
     def __init__(self, learning_rate, 
                  pretrained_weights = "nvidia/segformer-b5-finetuned-ade-640-640",
-                 use_silog = True):
+                 use_silog = True,
+                 input_upsample = False):
         super().__init__(learning_rate, "segformer_depth")
         self.encoder = SegformerModel.from_pretrained(pretrained_weights)
         self.config = self.encoder.config
         self.config.num_labels=1
         self.decoder = SegformerDecodeHead(self.config)
         self.use_silog = use_silog
+        self.input_upsample = input_upsample
 
     def forward(self, x):
+        if (self.input_upsample):
+            x = nn.functional.interpolate(
+                x, size = (x.shape[-2]*2, x.shape[-1]*2), mode="bilinear", align_corners=False
+            )
         encoded = self.encoder(x, output_hidden_states = True, output_attentions= True)
         logits = self.decoder(encoded.hidden_states)
         upsampled_logits = nn.functional.interpolate(

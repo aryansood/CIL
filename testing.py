@@ -1,5 +1,4 @@
 from models.base_model import DepthEstimationBase
-from lightning import Trainer
 from pathlib import Path
 from torch.utils.data import DataLoader
 from utils.dataset import DepthDataset
@@ -9,6 +8,7 @@ import pandas as pd
 import torch
 import numpy as np
 import os.path as osp
+import matplotlib.pyplot as plt
 
 def create_test_prediction(
         model: Type[DepthEstimationBase],
@@ -38,7 +38,7 @@ def create_test_prediction(
             batch_image = batch_image
             outputs = model(batch_image)
             for el in range(0, len(batch_image)):
-                numpy_arr = outputs[el][0].detach().cpu().numpy()
+                numpy_arr = outputs[el].detach().cpu().numpy()
                 #plt.imshow(numpy_arr)
                 #plt.show()
                 np.save(osp.join(data_dir, file_depth_ext[batch_idx*batch_size + el]), numpy_arr)

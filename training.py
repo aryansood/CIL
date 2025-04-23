@@ -1,9 +1,9 @@
 import torch
 from utils.dataset import DepthDataset
 from utils.constants import DATA_DIR
-from lightning.pytorch import Trainer, seed_everything  
-from lightning.pytorch.callbacks import ModelCheckpoint, Timer
-from lightning.pytorch.loggers.wandb import WandbLogger
+from pytorch_lightning import Trainer, seed_everything  
+from pytorch_lightning.callbacks import ModelCheckpoint, Timer
+from pytorch_lightning.loggers.wandb import WandbLogger
 from torch.utils.data import random_split
 from torch.utils.data import DataLoader
 from models.base_model import DepthEstimationBase
@@ -13,6 +13,7 @@ import albumentations as A
 from pathlib import Path
 from typing import List
 from datetime import timedelta
+import math
 
 def begin_training_loop(
     model: DepthEstimationBase,
@@ -27,7 +28,8 @@ def begin_training_loop(
     random_seed: int = 80,
     check_point_every_step: int = 500,
     debugging: bool = False,
-    max_training_duration: timedelta = timedelta(hours=4)):
+    max_training_duration: timedelta = timedelta(hours=4),
+    effective_batch_size: int = 0):
     seed_everything(random_seed, workers=True)
     torch.set_float32_matmul_precision('high')
 
@@ -62,6 +64,9 @@ def begin_training_loop(
         duration=max_training_duration
     )
 
+    if effective_batch_size < batch_size:
+        effective_batch_size = batch_size
+
     if debugging:
         trainer = Trainer(
             max_epochs=num_epochs,
@@ -79,6 +84,7 @@ def begin_training_loop(
                     latest_checkpoint,
                     timer],
             deterministic=False,
+            accumulate_grad_batches=math.ceil(effective_batch_size/batch_size)
         )
 
     trainer.fit(model, train_loader, val_loader)
