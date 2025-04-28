@@ -26,7 +26,7 @@ target_transform = transforms.Compose([
 ])
 
 
-dataset = DepthDataset(DATA_DIR, transform=input_transform, target_transform=target_transform)
+dataset = DepthDataset(DATA_DIR, mode=DepthDataset.TRAIN, transform=input_transform, target_transform=target_transform)
 train_dataset, val_dataset = random_split(dataset, [0.8, 0.2])
 
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=16)

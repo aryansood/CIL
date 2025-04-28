@@ -4,3 +4,4 @@ ethz-cil-monocular-depth-estimation-2025
 wandb
 data
 reproducibility/**run**
+**docker-python**

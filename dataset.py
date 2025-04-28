@@ -1,89 +1,112 @@
-import os
 import torch
 import random
 import numpy as np
+import pandas as pd
 from PIL import Image
+from pathlib import Path
+from typing import Union, Tuple
 from torchvision import transforms
 from torch.utils.data import Dataset
 
 
 class DepthDataset(Dataset):
-    def __init__(self, data_dir, transform=None, target_transform=None, has_gt=True):
-        self.data_dir = data_dir
+    RBG_COL = 'rgb_paths'
+    DPT_COL = 'depth_paths'
+
+    # This selects wheter the dataset will contain the Train or Test images. It indicates the relative paths from DATA_DIR to 
+    # (1) the folder containing the rgb_images and depth_masks (if applicable)  
+    # (2) the list of pairs of images and mask paths
+    # (3) whether the folder contains the depth_masks
+    TEST =  'test/test',  'test_list.txt', False
+    TRAIN = 'train/train', 'train_list.txt', True
+
+    def __init__(self, data_dir, mode, transform=None, target_transform=None):
+        if (mode != DepthDataset.TEST) and (mode != DepthDataset.TRAIN): raise TypeError("DepthDataset mode must be either DepthDataset.TRAIN or DepthDataset.TEST!")
+
+        self.mask_dir = Path(data_dir) / mode[0]
+        self.mask_list_path = Path(data_dir) / mode[1]
+        self.has_gt = mode[2]
         self.transform = transform
         self.target_transform = target_transform
-        self.has_gt = has_gt
         
-        data_paths = os.listdir(data_dir)
-        self.rgb_paths   = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.png')])
-        self.depth_paths = sorted([os.path.join(data_dir, file) for file in data_paths if file.endswith('.npy')])
+        self.data_paths = pd.read_csv(self.mask_list_path, sep=' ', names=[DepthDataset.RBG_COL, DepthDataset.DPT_COL])
+        
+    def get_path(self, idx, col):
+        return self.mask_dir / self.data_paths.at[idx, col]
 
     def __len__(self):
-        return len(self.rgb_paths)
+        return len(self.data_paths)
     
-    def __getitem__(self, idx):
+    def __getitem__(self, idx:int) -> Union[Tuple[Image.Image, torch.Tensor, str], Tuple[Image.Image, str]]:
         
-        rgb = Image.open(self.rgb_paths[idx]).convert('RGB')
+        rgb = Image.open(self.get_path(idx, DepthDataset.RBG_COL)).convert('RGB')
         
         if self.has_gt:
-            depth = np.load(self.depth_paths[idx]).astype(np.float32)
+            depth = np.load(self.get_path(idx, DepthDataset.DPT_COL), allow_pickle=True).astype(np.float32)
             depth = torch.from_numpy(depth)
             
             if self.transform:        rgb = self.transform(rgb)
             if self.target_transform: depth = self.target_transform(depth)
             
             # rgb_image, ground truth and image_path (might be needed for saving output +samples)
-            return rgb, depth, self.rgb_paths[idx][0] #
+            return rgb, depth
         
         else:
-            return rgb, self.rgb_paths[idx]  
+            return rgb#, self.get_path(idx, DepthDataset.RBG_COL)
 
     def randomize(self):
-        if self.has_gt:
-            joint_pairs = list(zip(self.rgb_paths, self.depth_paths))
-            random.shuffle(joint_pairs)
-            self.rgb_paths, self.depth_paths = zip(*joint_pairs)
+        self.data_paths = self.data_paths.sample(frac=1).reset_index(drop=True)
+
+
+
+# Wrapper for Randomized DepthDataset
+class RandomizedDataset:
+    def __init__(self, data_dir, mode):
+        self.dataset = DepthDataset(data_dir, mode)
+        self.mode = mode
+        self.idx = -1
+
+        self.dataset.randomize()
+
+    def random_entry(self):
+        self.idx += 1
+        return self.dataset[self.idx]
+
+    def random_image(self):
+        self.idx += 1
+        return self.dataset[self.idx][0]
+
+    def random_mask(self):
+        if (self.mode == DepthDataset.TEST): raise ValueError("Impossible to access ground truth of test image")
+        self.idx += 1
+        return self.dataset[self.idx][1]
+    
+    def iter(self, iterations):
+        if (self.mode == DepthDataset.TEST):
+            for i in range(iterations):
+                yield self.random_entry()[0]
         else:
-            random.shuffle(self.rgb_paths)
+            for i in range(iterations):
+                yield self.random_entry()[0:2]
+
 
 
 
 if __name__ == '__main__':
-    # Example Usage
+    # Example Usage, worked up to changes on 14.04.2025
     from torch.utils.data import random_split
-    from constants import DATA_DIR
+    from utils.constants import DATA_DIR
 
-    dataset = DepthDataset(DATA_DIR, transform=None, target_transform=None, has_gt=True)
-    train_dataset, test_dataset = random_split(dataset, [0.8,0.2], torch.Generator().manual_seed(42))
+    dataset = DepthDataset(DATA_DIR, DepthDataset.TRAIN, transform=None, target_transform=None)
+    print(dataset[0])
     
-    print(f"Legths: {len(train_dataset)} + {len(test_dataset)} = {len(dataset)}")
+    train_dataset, val_dataset = random_split(dataset, [0.8,0.2], torch.Generator().manual_seed(42))
+    print(f"\nLegths: {len(train_dataset)} + {len(val_dataset)} = {len(dataset)}\n")
     
     dataset.randomize()
-    print(dataset.rgb_paths[0], dataset.depth_paths[0])
-    print(dataset.rgb_paths[1], dataset.depth_paths[1])
-    print(dataset.rgb_paths[2], dataset.depth_paths[2])
+    print(dataset.data_paths.at[0, DepthDataset.RBG_COL], dataset.data_paths.at[0, DepthDataset.DPT_COL])
+    print(dataset.data_paths.at[1, DepthDataset.RBG_COL], dataset.data_paths.at[1, DepthDataset.DPT_COL])
+    print(dataset.data_paths.at[2, DepthDataset.RBG_COL], dataset.data_paths.at[2, DepthDataset.DPT_COL])
 
-
-
-
-# class LazyImageDataset(Dataset):
-#     def __init__(self, image_paths, mask_path, transform=None, transform_numpy = None):
-#         self.image_paths = image_paths
-#         self.mask_path = mask_path
-#         self.transform = transform
-#         self.transform_numpy = transform_numpy
-
-#     def __len__(self):
-#         return len(self.image_paths)
-
-#     def __getitem__(self, idx):
-#         img_path = self.image_paths[idx]
-#         mask_pat = self.mask_path[idx]
-#         to_tensor = transforms.ToTensor()
-#         image = Image.open(img_path).convert("RGB")
-#         mask = np.load(mask_pat)
-#         mask = mask/10
-#         image = self.transform(image)
-#         # mask = cv2.resize(mask, (256, 256), interpolation=cv2.INTER_NEAREST)
-#         mask = to_tensor(mask)
-#         return image, mask
+    test_dataset = DepthDataset(DATA_DIR, DepthDataset.TEST, transform=None, target_transform=None)
+    print("\n", test_dataset[0])

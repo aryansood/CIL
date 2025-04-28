@@ -123,34 +123,41 @@ def SIRMSELoss(output, target, check_shape=False, is_output_logarithm=False):
 
 
 if __name__ == '__main__':
-    # check correctness of each loss
+    loss_to_check = SILogLoss
 
-    T = torch.zeros((2,4,5))
-    print(f"{T.shape = }")
-    print(f"{T[1][0] = }")
+    if loss_to_check == SILogLoss:
 
-    A = 1 + T
-    print(f"{SILogLoss(torch.exp(A), torch.exp(T)) = }") 
-    # Notice term1 = 1, term2 = 1. With lmbda = 0.5 we recover the result
+        T = torch.zeros((2,4,5))
+        print(f"{T.shape = }")
+        print(f"{T[1][0] = }")
 
+        A = 1 + T
+        print(f"{SILogLoss(torch.exp(A), torch.exp(T)) = }") 
+        # Notice term1 = 1, term2 = 1. With lmbda = 0.5 we recover the result
 
-    print(f"{SIRMSELoss(torch.exp(A), torch.exp(T)) = }")
-    # Notice alpha = -1, delta = 1, loss=0
+    if loss_to_check == SIRMSELoss:
+        T = torch.zeros((2,4,5))
+        print(f"{T.shape = }")
+        print(f"{T[1][0] = }")
 
+        A = 1 + T
+        print(f"{SIRMSELoss(torch.exp(A), torch.exp(T)) = }")
+        # Notice alpha = -1, delta = 1, loss=0
 
-    import cv2
-    import numpy as np
-    from utils import random_image, random_mask
+    if loss_to_check == GradientLoss:
+        import cv2
+        import numpy as np
+        from utils import random_image, random_mask
 
-    img = np.expand_dims(np.array([random_mask(), random_mask()]), axis=1)
-    img1 = img / 2
-    img2 = img / 2 + np.uint8(np.random.rand(*img.shape)*3)/2
+        img = np.expand_dims(np.array([random_mask(), random_mask()]), axis=1)
+        img1 = img / 2
+        img2 = img / 2 + np.uint8(np.random.rand(*img.shape)*3)/2
 
-    print(f"{GradientLoss(torch.tensor(img), torch.tensor(img), True) = }") # for equal images the loss is not 0? wtf
-    print(f"{GradientLoss(torch.tensor(img1), torch.tensor(img), True) = }")
-    print(f"{GradientLoss(torch.tensor(img), torch.tensor(img1), True) = }")
-    print(f"{GradientLoss(torch.tensor(img2), torch.tensor(img), True) = }")
-    print(f"{GradientLoss(torch.tensor(img), torch.tensor(img2), True) = }")
+        print(f"{GradientLoss(torch.tensor(img), torch.tensor(img), True) = }") # for equal images the loss is not 0? wtf
+        print(f"{GradientLoss(torch.tensor(img1), torch.tensor(img), True) = }")
+        print(f"{GradientLoss(torch.tensor(img), torch.tensor(img1), True) = }")
+        print(f"{GradientLoss(torch.tensor(img2), torch.tensor(img), True) = }")
+        print(f"{GradientLoss(torch.tensor(img), torch.tensor(img2), True) = }")
 
 
 

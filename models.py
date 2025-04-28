@@ -41,7 +41,7 @@ class UNetMonocularDepthEstimator(L.LightningModule):
                     init.zeros_(m.bias)
 
     def training_step(self, batch, batch_idx):
-        X, Y, _ = batch
+        X, Y = batch
         Y_prob = self(X)
 
         silog = self.criterionSILog(Y_prob, Y)
@@ -52,7 +52,7 @@ class UNetMonocularDepthEstimator(L.LightningModule):
         return sirme
 
     def validation_step(self, batch, batch_idx):
-        X, Y, _ = batch
+        X, Y = batch
 
         Y_prob = self(X)
 
@@ -68,7 +68,7 @@ class UNetMonocularDepthEstimator(L.LightningModule):
         return sirme
 
     def test_step(self, batch, batch_idx):
-        X, Y = batch
+        X = batch
 
         Y_prob = self(X)
 
