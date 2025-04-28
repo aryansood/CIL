@@ -129,17 +129,18 @@ class UNetPlusPlusModule(nn.Module):
 
         else:
             output = self.final(x0_4)
-            return output
+            return torch.exp(output)
 
 if __name__ == "__main__":
     from torchinfo import summary
 
     in_channels = 3
     model = UNetPlusPlusModule(in_channels=in_channels, out_channels=1, excitation=True)
-    batch_size = 4
+    batch_size = 1
     summary(model, input_size=(batch_size, in_channels, 560, 426))
     
-    x = torch.randn((32, in_channels, 560, 426))
+    x = torch.randn((1, in_channels, 560, 426))
     preds = model(x.cuda())
     print(f"Input shape: {x.shape}")
     print(f"Output shape: {preds.shape}")
+    print(preds)
