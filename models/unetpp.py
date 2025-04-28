@@ -8,7 +8,7 @@ from .modules.unetpp import UNetPlusPlusModule
 
 class UNetPlusPlus(DepthEstimationBase):
     def __init__(self, learning_rate, dropout_prob):
-        super().__init__(learning_rate=learning_rate, name="Excited-UNet++")
+        super().__init__(learning_rate=learning_rate, name="UNet++")
         self.unet = UNetPlusPlusModule(in_channels=3, out_channels=1, dropout_prob=dropout_prob)
         self._init_unet_weights()
         
