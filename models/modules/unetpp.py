@@ -47,11 +47,11 @@ class ExcitedDoubleConv(nn.Module):
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
             nn.Dropout2d(p=dropout_prob),
+            Squeeze_Excite(out_channels, 4),
             nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
             nn.Dropout2d(p=dropout_prob),
-            Squeeze_Excite(out_channels, 4),
         )
 
     def forward(self, x):
@@ -61,33 +61,33 @@ class ExcitedDoubleConv(nn.Module):
 
 class UNetPlusPlusModule(nn.Module):
     
-    def __init__(self, in_channels, out_channels, dropout_prob=0.3, deep_supervision=False, nb_filter = [32, 64, 128, 256, 512]):
+    def __init__(self, in_channels, out_channels, dropout_prob=0.2, deep_supervision=False, nb_filter = [32, 64, 128, 256, 512], excitation=False):
         super().__init__()
-
+        ConvLayer = ExcitedDoubleConv if excitation else DoubleConv
         self.deep_supervision = deep_supervision
 
         self.pool = nn.MaxPool2d(2, 2)
         self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
 
-        self.conv0_0 = DoubleConv(in_channels, nb_filter[0], dropout_prob=dropout_prob)
-        self.conv1_0 = DoubleConv(nb_filter[0], nb_filter[1], dropout_prob=dropout_prob)
-        self.conv2_0 = DoubleConv(nb_filter[1], nb_filter[2], dropout_prob=dropout_prob)
-        self.conv3_0 = DoubleConv(nb_filter[2], nb_filter[3], dropout_prob=dropout_prob)
-        self.conv4_0 = DoubleConv(nb_filter[3], nb_filter[4], dropout_prob=dropout_prob)
+        self.conv0_0 = ConvLayer(in_channels, nb_filter[0], dropout_prob=dropout_prob)
+        self.conv1_0 = ConvLayer(nb_filter[0], nb_filter[1], dropout_prob=dropout_prob)
+        self.conv2_0 = ConvLayer(nb_filter[1], nb_filter[2], dropout_prob=dropout_prob)
+        self.conv3_0 = ConvLayer(nb_filter[2], nb_filter[3], dropout_prob=dropout_prob)
+        self.conv4_0 = ConvLayer(nb_filter[3], nb_filter[4], dropout_prob=dropout_prob)
 
-        self.conv0_1 = DoubleConv(nb_filter[0]+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
-        self.conv1_1 = DoubleConv(nb_filter[1]+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
-        self.conv2_1 = DoubleConv(nb_filter[2]+nb_filter[3], nb_filter[2], dropout_prob=dropout_prob)
-        self.conv3_1 = DoubleConv(nb_filter[3]+nb_filter[4], nb_filter[3], dropout_prob=dropout_prob)
+        self.conv0_1 = ConvLayer(nb_filter[0]+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
+        self.conv1_1 = ConvLayer(nb_filter[1]+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
+        self.conv2_1 = ConvLayer(nb_filter[2]+nb_filter[3], nb_filter[2], dropout_prob=dropout_prob)
+        self.conv3_1 = ConvLayer(nb_filter[3]+nb_filter[4], nb_filter[3], dropout_prob=dropout_prob)
 
-        self.conv0_2 = DoubleConv(nb_filter[0]*2+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
-        self.conv1_2 = DoubleConv(nb_filter[1]*2+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
-        self.conv2_2 = DoubleConv(nb_filter[2]*2+nb_filter[3], nb_filter[2], dropout_prob=dropout_prob)
+        self.conv0_2 = ConvLayer(nb_filter[0]*2+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
+        self.conv1_2 = ConvLayer(nb_filter[1]*2+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
+        self.conv2_2 = ConvLayer(nb_filter[2]*2+nb_filter[3], nb_filter[2], dropout_prob=dropout_prob)
 
-        self.conv0_3 = DoubleConv(nb_filter[0]*3+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
-        self.conv1_3 = DoubleConv(nb_filter[1]*3+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
+        self.conv0_3 = ConvLayer(nb_filter[0]*3+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
+        self.conv1_3 = ConvLayer(nb_filter[1]*3+nb_filter[2], nb_filter[1], dropout_prob=dropout_prob)
 
-        self.conv0_4 = DoubleConv(nb_filter[0]*4+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
+        self.conv0_4 = ConvLayer(nb_filter[0]*4+nb_filter[1], nb_filter[0], dropout_prob=dropout_prob)
 
         if self.deep_supervision:
             self.final1 = nn.Conv2d(nb_filter[0], out_channels, kernel_size=1)
@@ -131,11 +131,12 @@ class UNetPlusPlusModule(nn.Module):
 if __name__ == "__main__":
     from torchinfo import summary
 
-    model = UNetPlusPlusModule(in_channels=1, out_channels=1)
-    batch_size = 16
-    summary(model, input_size=(batch_size, 1, 112, 112))
+    in_channels = 3
+    model = UNetPlusPlusModule(in_channels=in_channels, out_channels=1, excitation=True)
+    batch_size = 4
+    summary(model, input_size=(batch_size, in_channels, 112, 112))
     
-    x = torch.randn((32, 1, 256, 256))
-    preds = model(x)
+    x = torch.randn((32, in_channels, 256, 256))
+    preds = model(x.cuda())
     print(f"Input shape: {x.shape}")
     print(f"Output shape: {preds.shape}")
