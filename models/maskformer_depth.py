@@ -8,7 +8,7 @@ class Mask2FormerDepthEstimator(DepthEstimationBase):
     def __init__(self, learning_rate, 
                  pretrained_weights = "facebook/mask2former-swin-small-coco-instance",
                  use_silog = True):
-        super().__init__(learning_rate, "segformer_depth")
+        super().__init__(learning_rate, "maskformer_depth")
         self.maskformer_model = Mask2FormerModel.from_pretrained(pretrained_weights)
         self.mask_fusion = nn.Sequential(
             nn.Conv2d(in_channels=100, out_channels=64, kernel_size=5, padding=2, stride=1),

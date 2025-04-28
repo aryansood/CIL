@@ -9,6 +9,7 @@ import torch
 import numpy as np
 import os.path as osp
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 def create_test_prediction(
         model: Type[DepthEstimationBase],
@@ -30,7 +31,7 @@ def create_test_prediction(
     model.eval()
     file_depth_ext = pd.read_csv(test_list, sep=' ')['depth_paths']
     with torch.no_grad():
-        for batch_idx, (batch_image, batch_image_path) in enumerate(test_dl):
+        for batch_idx, (batch_image, batch_image_path) in tqdm(enumerate(test_dl), desc="generating pred", total=len(test_dl)):
             batch_image = batch_image.float()
             # print(batch_image.shape)
             batch_image = batch_image.permute(0, 3, 1, 2)
