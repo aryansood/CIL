@@ -25,7 +25,7 @@ def begin_training_loop(
     num_worker: int = 4,
     num_epochs: int = 5,
     random_seed: int = 80,
-    gradient_clip_val: int = 0,
+    gradient_clip_val: int = None,
     gradient_clip_algorithm: str = "norm",
     check_point_every_step: int = 500,
     debugging: bool = False,
@@ -44,7 +44,7 @@ def begin_training_loop(
         val_dataset = DepthDataset(data_dir=data_dir, data_paths=val_split, augmentations=augmentations)
 
     if swa_val_run:
-        train_dataset = random_split(train_dataset, [0.25, 0.75])[0]
+        train_dataset = random_split(train_dataset, [0.4, 0.6])[0]
         print("downsampled dataset size:",len(train_dataset))
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_worker)
@@ -107,7 +107,8 @@ def begin_training_loop(
             deterministic=False,
             accumulate_grad_batches=math.ceil(effective_batch_size/batch_size),
             gradient_clip_val=gradient_clip_val,
-            gradient_clip_algorithm=gradient_clip_algorithm
+            gradient_clip_algorithm=gradient_clip_algorithm,
+            val_check_interval= 0.25 if swa_val_run else 1.0
         )
 
     trainer.fit(model, train_loader, val_loader)

@@ -100,7 +100,7 @@ class UNetPlusPlusModule(nn.Module):
         else:
             self.final = nn.Conv2d(nb_filter[0], out_channels, kernel_size=1)
         
-    def forward(self, input):
+    def forward(self, input, return_log = False):
         x0_0 = self.conv0_0(input)
         x1_0 = self.conv1_0(self.pool(x0_0))
         x0_1 = self.conv0_1(torch.cat([x0_0, match_size(self.up(x1_0), x0_0)], dim=1))
@@ -126,10 +126,11 @@ class UNetPlusPlusModule(nn.Module):
             output3 = self.final3(x0_3)
             output4 = self.final4(x0_4)
             return [output1, output2, output3, output4]
-
         else:
             output = self.final(x0_4)
-            return torch.exp(output)
+            if not return_log:
+                output = torch.exp(output)
+            return output
 
 if __name__ == "__main__":
     from torchinfo import summary

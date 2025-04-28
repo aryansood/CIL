@@ -15,7 +15,7 @@ class UNetPlusPlus(DepthEstimationBase):
     def _init_unet_weights(self):
         for m in self.unet.modules():
             if isinstance(m, nn.Conv2d):
-                init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                init.dirac_(m.weight)
                 if m.bias is not None:
                     init.zeros_(m.bias)
 
@@ -27,6 +27,18 @@ class UNetPlusPlus(DepthEstimationBase):
                 init.xavier_normal_(m.weight)
                 if m.bias is not None:
                     init.zeros_(m.bias)
+
+    def training_step(self, batch, batch_idx):
+        X, Y, _ = batch
+        Y_prob = self(X)
+        
+        silog = self.criterionSILog(Y_prob, Y, is_output_logarithm=True)
+        sirme = self.criterionSIRME(Y_prob, Y, is_output_logarithm=True)
+        self.log('train_silog_loss', silog, prog_bar=True)
+        self.log('train_sirme_loss', sirme, prog_bar=True)
+
+        return sirme
     
     def forward(self, rgb: torch.Tensor) -> torch.Tensor:
-        return self.unet(rgb)
+        result = self.unet.forward(rgb, return_log=True)
+        return result
