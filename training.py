@@ -74,7 +74,8 @@ def begin_training_loop(
             callbacks=[timer],
             deterministic=False,
             overfit_batches=2,
-            detect_anomaly=True
+            detect_anomaly=True,
+            gradient_clip_val=0.5
         )
     else:
         trainer = Trainer(
@@ -84,7 +85,9 @@ def begin_training_loop(
                     latest_checkpoint,
                     timer],
             deterministic=False,
-            accumulate_grad_batches=math.ceil(effective_batch_size/batch_size)
+            accumulate_grad_batches=math.ceil(effective_batch_size/batch_size),
+            gradient_clip_val=0.5,
+            gradient_clip_algorithm="value"
         )
 
     trainer.fit(model, train_loader, val_loader)
