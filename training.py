@@ -26,6 +26,8 @@ def begin_training_loop(
     num_worker: int = 4,
     num_epochs: int = 5,
     random_seed: int = 80,
+    gradient_clip_val: int = 0,
+    gradient_clip_algorithm: str = "norm",
     check_point_every_step: int = 500,
     debugging: bool = False,
     max_training_duration: timedelta = timedelta(hours=4),
@@ -75,7 +77,8 @@ def begin_training_loop(
             deterministic=False,
             overfit_batches=2,
             detect_anomaly=True,
-            gradient_clip_val=0.5
+            gradient_clip_val=gradient_clip_val,
+            gradient_clip_algorithm=gradient_clip_algorithm
         )
     else:
         trainer = Trainer(
@@ -86,8 +89,8 @@ def begin_training_loop(
                     timer],
             deterministic=False,
             accumulate_grad_batches=math.ceil(effective_batch_size/batch_size),
-            gradient_clip_val=0.5,
-            gradient_clip_algorithm="value"
+            gradient_clip_val=gradient_clip_val,
+            gradient_clip_algorithm=gradient_clip_algorithm
         )
 
     trainer.fit(model, train_loader, val_loader)
