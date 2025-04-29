@@ -31,6 +31,7 @@ def begin_training_loop(
     debugging: bool = False,
     max_training_duration: timedelta = timedelta(hours=4),
     effective_batch_size: int = 0,
+    val_frac: float = 1.0,
     swa_val_run: bool = False):
     seed_everything(random_seed, workers=True)
     torch.set_float32_matmul_precision('high')
@@ -108,7 +109,7 @@ def begin_training_loop(
             accumulate_grad_batches=math.ceil(effective_batch_size/batch_size),
             gradient_clip_val=gradient_clip_val,
             gradient_clip_algorithm=gradient_clip_algorithm,
-            val_check_interval= 0.25 if swa_val_run else 1.0
+            val_check_interval= 0.25 if swa_val_run else val_frac
         )
 
     trainer.fit(model, train_loader, val_loader)
