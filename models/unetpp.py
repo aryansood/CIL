@@ -39,6 +39,20 @@ class UNetPlusPlus(DepthEstimationBase):
 
         return sirme
     
+    def validation_step(self, batch, batch_idx):
+        X, Y, _ = batch
+        Y_prob = self(X)
+
+        # assert torch.all((Y_prob >= 0) & (Y_prob <= 1)), "Input values should be in the range [0, 1]"
+        # assert torch.all((Y == 0) | (Y == 1)), "Target values should be 0 or 1"
+        # assert Y_prob.shape == Y.shape, "Input and target must have the same shape"
+        silog = self.criterionSILog(Y_prob, Y, is_output_logarithm=True)
+        sirme = self.criterionSIRME(Y_prob, Y, is_output_logarithm=True)
+        self.log('valid_silog_loss', silog, prog_bar=True)
+        self.log('valid_sirme_loss', sirme, prog_bar=True)
+
+        return sirme
+
     def forward(self, rgb: torch.Tensor) -> torch.Tensor:
         result = self.unet.forward(rgb, return_log=True)
         return result

@@ -58,7 +58,7 @@ class DepthEstimationBase(L.LightningModule):
     
     def on_before_optimizer_step(self, _):
         norms = grad_norm(self,norm_type=2)
-        self.log_dict(norms, prog_bar=True)
+        self.log_dict(norms, prog_bar=False)
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), 
