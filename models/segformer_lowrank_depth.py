@@ -10,7 +10,7 @@ class LowRankSegFormer(DepthEstimationBase):
                  pretrained_weights = "nvidia/segformer-b5-finetuned-ade-640-640",
                  use_silog = True,
                  lambda_orth = 1.0,
-                 lambda_hoyer = 0.5):
+                 lambda_hoyer = 0.1):
         super().__init__(learning_rate, "segformer_depth")
         self.encoder = SegformerModel.from_pretrained(pretrained_weights)
         self.config = self.encoder.config
@@ -62,6 +62,6 @@ class LowRankSegFormer(DepthEstimationBase):
         self.log('train_orthogonal_loss', loss_orthogonal, prog_bar=True)
         self.log('train_hoyer_loss', loss_hoyer, prog_bar=True)
         
-        loss = loss_task + self.lambda_orth*loss_orthogonal + self.lambda_hoyer*self.lambda_hoyer
+        loss = loss_task + self.lambda_orth*loss_orthogonal + self.lambda_hoyer*loss_hoyer
         return loss
     
