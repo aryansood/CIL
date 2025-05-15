@@ -56,7 +56,6 @@ class LowRankSegFormer(DepthEstimationBase):
         for layer in self.decoder.linear_c:
             loss_orthogonal += layer.proj.orthogonal_loss()
             loss_hoyer += layer.proj.hoyer_loss()
-            print(layer.proj.sigma)
 
         self.log('train_silog_loss', silog, prog_bar=True)
         self.log('train_sirme_loss', sirme, prog_bar=True)
