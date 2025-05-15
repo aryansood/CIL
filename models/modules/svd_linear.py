@@ -29,9 +29,9 @@ class LowRankLinear(nn.Module):
 
     def orthogonal_loss(self):
         u_square = self.u.T @ self.u
-        u_square -= torch.eye(u_square.shape[0])
+        u_square -= torch.eye(u_square.shape[0], device=u_square.device)
         v_square = self.v.T @ self.v
-        v_square -= torch.eye(v_square.shape[0])
+        v_square -= torch.eye(v_square.shape[0], device=u_square.device)
         return 1/self.rank * (u_square.square().sum() + v_square.square().sum())
     
     def hoyer_loss(self):
