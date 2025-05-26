@@ -80,16 +80,16 @@ class UNetModule(nn.Module):
 
         self.bottleneck = DoubleConv(in_channels=256, out_channels=512, dropout_prob=dropout_prob)
 
-        self.up4 = nn.UpSample(in_channels=512, out_channels=256, kernel_size=2, stride=2)
+        self.up4 = nn.ConvTranspose2d(in_channels=512, out_channels=256, kernel_size=2, stride=2)
         self.decoder4 = DoubleConv(in_channels=256 * 2, out_channels=256, dropout_prob=0.0)
 
-        self.up3 = nn.UpSample(in_channels=256, out_channels=128, kernel_size=2, stride=2)
+        self.up3 = nn.ConvTranspose2d(in_channels=256, out_channels=128, kernel_size=2, stride=2)
         self.decoder3 = DoubleConv(in_channels=128 * 2, out_channels=128, dropout_prob=0.0)
 
-        self.up2 = nn.UpSample(in_channels=128, out_channels=64, kernel_size=2, stride=2)
+        self.up2 = nn.ConvTranspose2d(in_channels=128, out_channels=64, kernel_size=2, stride=2)
         self.decoder2 = DoubleConv(in_channels=64 * 2, out_channels=64, dropout_prob=0.0)
 
-        self.up1 = nn.UpSample(in_channels=64, out_channels=32, kernel_size=2, stride=2)
+        self.up1 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=2, stride=2)
         self.decoder1 = DoubleConv(in_channels=32 * 2, out_channels=32, dropout_prob=0.0)
 
         self.conv = nn.Conv2d(
