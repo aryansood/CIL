@@ -6,7 +6,7 @@ import zlib
 from tqdm import tqdm
 
 # Path definitions
-data_root = '/home/alessandro/cil/project/data/ethz-cil-monocular-depth-estimation-2025'
+data_root = 'ethz-cil-monocular-depth-estimation-2025'
 predictions_dir = os.path.join(data_root, 'test/test/')
 test_list_file = os.path.join(data_root, 'test_list.txt')
 output_csv = os.path.join(data_root, 'predictions.csv')
