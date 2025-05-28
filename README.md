@@ -16,3 +16,28 @@ for further details and where to change the variables.
 \
 
 Optionally, if you want to submit run create_outputs.py, after running test_evaluation.py.
+
+In the models sub-folder you can find the implementation of the different models we have trained.
+
+The Unet (models/large_unet.py), Unet++ (models/unetpp.py), the Swin transformer encoder with the Unet decoder(models/unet_swin_depth_estimator.py) and the Vit transformer encoder with a Unet decoder(models/unet_vit_depth_estimator.py) were trained from scratch on the training data as presented inside train_split.csv.
+
+The ResNet encoder plus Unet decoder used pre-trained weights for the encoder and was fine-tuned on the training data as presented inside train_split.csv. We used (torchvision.models.ResNet50_Weights) pre-trained weights.
+
+The Segformer Encoder plus Segformer Decoder(modified by us to output a depth mask) used pre-trained weights for the encoder and was fine-tuned on the training data as presented inside train_split.csv. We used (nvidia/segformer-b5-finetuned-ade-640-640) fine-tuned weights.
+
+**Table: Depth estimation performance across different architectures**
+
+| Model                     | Validation Loss | Training Loss | Kaggle Public Score |
+|--------------------------|-----------------|----------------|---------------------|
+| **U-Net Based models**   |                 |                |                     |
+| Base U-Net               | 0.27101         | 0.32242        | --                  |
+| UNet++                   | 0.36963         | 0.44006        | --                  |
+| **ResNet Based models**  |                 |                |                     |
+| ResNet                   | 0.15886         | 0.09157        | 0.16063             |
+| ResNet-Transformer       | 0.17421         | 0.11357        | 0.21408             |
+| **SegFormer models**     |                 |                |                     |
+| mask2former-swin         | 0.13222         | 0.097775       | 0.13343             |
+| segformer-b4-512-512     | 0.14236         | 0.11561        | 0.14048             |
+| segformer-b5-640-640     | 0.11474         | 0.15951        | **0.12621**         |
+
+> **Note:** The SegFormer based model achieved a better result compared to the other models, showing a 27.8% improvement over the ResNet based model and a 68.9% improvement over the Base-U-Net and the UNet++ model.
