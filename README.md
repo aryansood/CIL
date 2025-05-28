@@ -35,8 +35,9 @@ The Segformer Encoder plus Segformer Decoder(modified by us to output a depth ma
 | **ResNet Based models**  |                 |                |                     |
 | ResNet                   | 0.15886         | 0.09157        | 0.16063             |
 | ResNet-Transformer       | 0.17421         | 0.11357        | 0.21408             |
-| **SegFormer models**     |                 |                |                     |
+| **Maskformer model**     |                 |                |                     |
 | mask2former-swin         | 0.13222         | 0.097775       | 0.13343             |
+| **SegFormer models**     |                 |                |                     |            |
 | segformer-b4-512-512     | 0.14236         | 0.11561        | 0.14048             |
 | segformer-b5-640-640     | 0.11474         | 0.15951        | **0.12621**         |
 
