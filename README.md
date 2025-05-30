@@ -1,22 +1,43 @@
+# ETH Computational Intelligence Lab Project 2025
+
+## Monocular Depth Estimation
+
+- Group Name: _deficienza_computazionale_
+- Authors: Luigi Pizza, Aryan Sood, Alessandro Tazza, Federico Villa
+
 ## Environment Setup
+
+### Using Conda
 
 Create a conda environment and activate it:
 
 ```bash
-conda create -n CIL python=3.11
+conda create -n CIL python=3.12
 conda activate CIL
 ```
 
-Install the required dependencies (via `pip`):
+Install `pip` inside the conda environment:
 
 ```bash
 conda install pip
+```
+
+### Using Python virtual environment
+
+Create a Python virtual environment:
+```bash
+python -m venv CIL
+```
+
+### Install required dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
 ## Model Training
 
-The file `example_training.py` is an example containing the code for running a model. It is the same script used by us to achieve our best Kaggle score.
+The file `example_training.py` contains an example for running a model.  It is the same script used by us to achieve our best Kaggle score.
 
 In the example file, the `begin_training_loop` function is called. That function is called during training to start the main model training process. The function's parameter `use_random_split` is a boolean value that should be `True` if you want to perform a random split of your data, so creating at runtime a training set and validation set at random. If `use_random_split = False`, then a custom split should be provided, so both the `train_split` and `val_split` parameters should be non-empty.
 
@@ -95,3 +116,7 @@ To evaluate our results, we provide the model weights of the following models:
 | segformer-b5-640-640  | [polybox](https://polybox.ethz.ch/index.php/s/6XXgN6bzNNbSj4D) |
 | mask2former-swin-small-coco-instance  | [polybox](https://polybox.ethz.ch/index.php/s/Xf7wDprL3KaTj52) |
 | ResNet50  | [polybox](https://polybox.ethz.ch/index.php/s/xG2Ea9xQQyjTyFL) |
+
+## Comparison between trained models
+
+![Comparison between models](deliverables/model_comparison.jpg)

@@ -44,7 +44,6 @@ model.optimizer_config = {
         "scheduler": torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(
             model.optimizer,
             T_0 = 100,
-            #eta_min=model.learning_rate/10,  
         ),
         "interval": "step",
         "frequency": 50
