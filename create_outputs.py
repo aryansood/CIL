@@ -6,10 +6,12 @@ import zlib
 from tqdm import tqdm
 
 # Path definitions
-data_root = 'ethz-cil-monocular-depth-estimation-2025'
-predictions_dir = os.path.join(data_root, 'test/test/')
-test_list_file = os.path.join(data_root, 'test_list.txt')
-output_csv = os.path.join(data_root, 'predictions.csv')
+test_rgb_directory = '/cluster/courses/cil/monocular_depth/data/'
+test_prediction_directory = 'ethz-cil-monocular-depth-estimation-2025'
+directory_root = ''
+predictions_dir = os.path.join(test_prediction_directory, 'test/')
+test_list_file = os.path.join(directory_root, 'test_list.txt')
+output_csv = os.path.join(directory_root, 'predictions.csv')
 
 def compress_depth_values(depth_values):
     # Convert depth values to bytes
@@ -22,6 +24,7 @@ def compress_depth_values(depth_values):
 def process_depth_maps():
     # Read file list
     with open(test_list_file, 'r') as f:
+        next(f)
         file_pairs = [line.strip().split() for line in f]
     
     # Initialize lists to store data
