@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 The file `example_training.py` is an example containing the code for running a model. It is the same script used by us to achieve our best Kaggle score.
 
-In the example file, the `begin_training_loop` function is called. That function is called during training to start the main model training process. The function's parameter `random_split` is a boolean value that should be `True` if you want to perform a random split of your data, so creating at runtime a training set and validation set at random. If `random_split = False`, then a custom split should be provided, so both the `train_split` and `val_split` parameters should be non-empty.
+In the example file, the `begin_training_loop` function is called. That function is called during training to start the main model training process. The function's parameter `use_random_split` is a boolean value that should be `True` if you want to perform a random split of your data, so creating at runtime a training set and validation set at random. If `use_random_split = False`, then a custom split should be provided, so both the `train_split` and `val_split` parameters should be non-empty.
 
 Here there is an example of such parameters using the training and validation splits created by clustering images based on their cosine similarity (as we did in our experiments):
 - `train_split=pd.read_csv("train_split.csv")["file_name"].to_list()`
