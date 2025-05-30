@@ -62,11 +62,11 @@ The model created by using _SegFormer encoder plus SegFormer Decoder_ (modified 
 
 For more details of the actual model's implementation refer to `models/segformer_depth.py`. 
 
-### MaskFormer Model
+### Mask2Former Model
 
-The model created by using a _MaskFormer architecture plus double convolutional layer_ used pre-trained weights for the MaskFormer architecture and was fine-tuned on the training data as referred in `train_split.csv`. The fine-tuned weights used were taken from [`facebook/mask2former-swin-small-coco-instance`](https://huggingface.co/facebook/mask2former-swin-small-coco-instance). 
+The model created by using a _Mask2Former architecture plus double convolutional layer_ used pre-trained weights for the Mask2Former architecture and was fine-tuned on the training data as referred in `train_split.csv`. The fine-tuned weights used were taken from [`facebook/mask2former-swin-small-coco-instance`](https://huggingface.co/facebook/mask2former-swin-small-coco-instance). 
 
-For more details of the actual model's implementation refer to: `models/maskformer_depth.py`.
+For more details of the actual model's implementation refer to: `models/Mask2Former_depth.py`.
 
 **Table: Depth estimation performance across different architectures**
 
@@ -78,8 +78,8 @@ For more details of the actual model's implementation refer to: `models/maskform
 | **ResNet Based models**  |                 |                |                     |
 | ResNet                   | 0.15886         | 0.09157        | 0.16063             |
 | ResNet-Transformer       | 0.17421         | 0.11357        | 0.21408             |
-| **Maskformer model**     |                 |                |                     |
-| mask2former-swin         | 0.12976         | 0.097775       | 0.13343             |
+| **Mask2Former model**     |                 |                |                     |
+| mask2former-swin-small-coco-instance         | 0.12976         | 0.097775       | 0.13343             |
 | **SegFormer models**     |                 |                |                     |
 | segformer-b4-512-512     | 0.14236         | 0.11561        | 0.14048             |
 | segformer-b5-640-640     | 0.11474         | 0.15951        | **0.12621**         |
