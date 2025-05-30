@@ -37,7 +37,7 @@ model.eval()
 
 # `data_dir`: replace the parameter with the path containing the test data.
 dataset = DepthDataset(data_dir='/cluster/courses/cil/monocular_depth/data/test', augmentations=augmentations, has_gt=False)
-test_loader = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=4)
+test_loader = DataLoader(dataset, batch_size=16, shuffle=False, num_workers=4)
 
 # `directory`: replace the variable with the path where you want to save the prediction files.
 directory = 'ethz-cil-monocular-depth-estimation-2025/test'
@@ -53,5 +53,5 @@ with torch.no_grad():
         batch_image = batch_image.to('cuda')
         outputs = model(batch_image)
         for el in range(0, len(batch_image)):
-            numpy_arr = outputs[el][0].detach().cpu().numpy()
+            numpy_arr = outputs[el].detach().cpu().numpy()
             np.save(osp.join(directory, file_depth_ext[batch_idx*16 + el]), numpy_arr)
