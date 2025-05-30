@@ -85,3 +85,12 @@ For more details of the actual model's implementation refer to: `models/Mask2For
 | segformer-b5-640-640     | 0.11474         | 0.15951        | **0.12621**         |
 
 > **Note:** The SegFormer based model achieved a better result compared to the other models, showing a 27.8% improvement over the ResNet based model and a 68.9% improvement over the Base-U-Net and the UNet++ model.
+
+### Model Weights
+
+To evaluate our results, we provide the model weights of the following models:
+| **Model** | **File** |
+| ---------|-----------|
+| segformer-b4-512-512 | [polybox](https://polybox.ethz.ch/index.php/s/abqc8tgFegTScZ7) |
+| segformer-b5-640-640  | [polybox](https://polybox.ethz.ch/index.php/s/6XXgN6bzNNbSj4D) |
+| mask2former-swin-small-coco-instance  | [polybox](https://polybox.ethz.ch/index.php/s/Xf7wDprL3KaTj52) |
