@@ -29,15 +29,17 @@ augmentations = [
     ])
 ]
 
-
-model = SegFormerDepthEstimator.load_from_checkpoint('segformer_depth_checkpoint--epoch=3-valid_sirme_loss=0.1253.ckpt').to('cuda')
+# Replace the checkpoint file (.ckpt) with the path of the checkpoint file generated during training.
+# The same checkpoint file we used to achieve our best Kaggle score can be found at:
+# https://drive.google.com/file/d/1iIvGZ2I5k3vbXvfXvBV6dONWtoDYHTlK/view
+model = SegFormerDepthEstimator.load_from_checkpoint('segformer_depth_checkpoint.ckpt').to('cuda')
 model.eval()
 
-#data_dir Insert Path of test data.
+# `data_dir`: replace the parameter with the path containing the test data.
 dataset = DepthDataset(data_dir='ethz-cil-monocular-depth-estimation-2025/test/test', augmentations=augmentations, has_gt=False)
 test_loader = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=4)
 
-#Insert Path of where you want to save data
+# `directory`: replace the variable with the path where you want to save the prediction files.
 directory = 'ethz-cil-monocular-depth-estimation-2025'
 device = torch.device("cuda")
 

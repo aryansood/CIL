@@ -24,11 +24,13 @@ Here there is an example of such parameters using the training and validation sp
 - `train_split=pd.read_csv("train_split.csv")["file_name"].to_list()`
 - `val_split=pd.read_csv("val_split.csv")["file_name"].to_list()`
 
-Check the files `train_split.csv` and `val_split.csv` in the repository parent folder to see how to format the files. Both files are formatted as _Comma-Separated Value_ (_.csv_) files with only one column, `file_name`, and the values contained in the column are alternating names of depth values (`.npy`) and RGB Images (`.png`) filenames. 
+Check the files `train_split.csv` and `val_split.csv` in the repository root folder to see how to format the files. Both files are formatted as _Comma-Separated Value_ (_.csv_) files with only one column, `file_name`, and the values contained in the column are alternating names of depth values (`.npy`) and RGB Images (`.png`) filenames. 
 
 ## Model Evaluation
 
-To evaluate a previously trained model, run the script `test_evaluation.py` after setting the model weights and the path of your test data in the code (refer to the comments inside the evaluation file for more details on how to change the values to evaluate a specific model).
+To evaluate a previously trained model, run the script `test_evaluation.py` after setting the model weights, the path of your test data and the directory where the predictions should be saved (refer to the comments inside the evaluation file for more details on how to change the values to evaluate a specific model).
+
+To use the same model weights and test data as done in our best experiment, do not change any variables in the script. Simply [download the model weights](https://drive.google.com/file/d/1iIvGZ2I5k3vbXvfXvBV6dONWtoDYHTlK/view) and save the downloaded checkpoint file in the root directory of this repository.  
 
 ## Submitting Results
 
