@@ -94,3 +94,4 @@ To evaluate our results, we provide the model weights of the following models:
 | segformer-b4-512-512 | [polybox](https://polybox.ethz.ch/index.php/s/abqc8tgFegTScZ7) |
 | segformer-b5-640-640  | [polybox](https://polybox.ethz.ch/index.php/s/6XXgN6bzNNbSj4D) |
 | mask2former-swin-small-coco-instance  | [polybox](https://polybox.ethz.ch/index.php/s/Xf7wDprL3KaTj52) |
+| ResNet50  | [polybox](https://polybox.ethz.ch/index.php/s/xG2Ea9xQQyjTyFL) |
