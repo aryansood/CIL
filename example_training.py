@@ -10,18 +10,18 @@ import gc
 import os 
 import os.path as osp
 import wandb
-#Insert wandb_key if wanted to use.
+# Insert wandb_key if wanted to use.
 wandb_key = ''
 
 wandb.login(
     key=wandb_key
 )
-#Insert Path of the location of the data before train/train
-DS_PATH = ""
+# Insert Path of the location of the data before train
+DS_PATH = "/cluster/courses/cil/monocular_depth/data/"
 
 print(os.listdir(DS_PATH))
 
-TRAIN_PATH = osp.join(DS_PATH, "train/train")
+TRAIN_PATH = osp.join(DS_PATH, "train")
 
 normalize_noise_augmentation = A.Compose([
     A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
@@ -54,7 +54,7 @@ model.optimizer_config = {
 begin_training_loop(
     model = model,
     data_dir = Path(TRAIN_PATH),
-    random_split=False,
+    use_random_split=False,
     train_split=pd.read_csv("train_split.csv")["file_name"].to_list(),
     val_split=pd.read_csv("val_split.csv")["file_name"].to_list(),
     augmentations = augmentations,

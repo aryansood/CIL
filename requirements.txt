@@ -1,25 +1,31 @@
-albucore @ file:///home/conda/feedstock_root/build_artifacts/albucore_1736621936228/work
-albumentations @ file:///home/conda/feedstock_root/build_artifacts/albumentations_1740790293257/work
-huggingface-hub==0.30.2
-imageio==2.37.0
-lightning @ file:///home/conda/feedstock_root/build_artifacts/lightning_1742437252389/work
-lightning-utilities @ file:///home/conda/feedstock_root/build_artifacts/lightning-utilities_1743734367405/work
-lmdb==1.6.2
-numpy @ file:///home/conda/feedstock_root/build_artifacts/numpy_1742254787379/work/dist/numpy-2.2.4-cp313-cp313-linux_x86_64.whl#sha256=f76ad032934da2c4719e50abb4142164ac1b039dc18f5fc412a5048a8bade5ae
-opencv-python==4.11.0
-opencv-python-headless==4.11.0
-pillow @ file:///home/conda/feedstock_root/build_artifacts/pillow_1735929688808/work
-pytorch-lightning @ file:///home/conda/feedstock_root/build_artifacts/pytorch-lightning_1742579345300/work
+albucore==0.0.24
+albumentations==2.0.8
+aiohappyeyeballs==2.6.1
+docker-pycreds==0.4.0
+einops==0.8.1
+fsspec==2025.3.2
+GitPython==3.1.44
+huggingface-hub==0.31.4
+lightning==2.5.1.post0
+lightning-utilities==0.14.3
+opencv-python-headless==4.11.0.86
+pandas==2.2.3
+pillow==11.2.1
+propcache==0.3.1
+protobuf==6.31.0
+pydantic==2.11.4
+pytorch-lightning==2.5.1.post0
+scikit-learn==1.6.1
+scipy==1.15.3
 safetensors==0.5.3
-setuptools==75.8.2
-torch @ file:///home/conda/feedstock_root/build_artifacts/libtorch_1742922447420/work
-torchinfo @ file:///home/conda/feedstock_root/build_artifacts/torchinfo_1735141362764/work
-torchmetrics @ file:///home/conda/feedstock_root/build_artifacts/torchmetrics_1744107217838/work
-torchvision @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_torchvision_1742619140/work
-torchvision-extra-decoders @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_torchvision-extra-decoders_1739805875/work
-tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1735661334605/work
-traitlets @ file:///home/conda/feedstock_root/build_artifacts/traitlets_1733367359838/work
-transformer-lens==2.15.0
+simsimd==6.2.1
+stringzilla==3.12.5
+sympy==1.14.0
+tokenizers==0.21.1
+torch==2.7.0
+torchinfo==1.8.0
+torchmetrics==1.7.1
+torchvision==0.22.0
 transformers==4.51.3
-transformers-stream-generator==0.0.5
-wandb @ file:///home/conda/feedstock_root/build_artifacts/wandb_1743626797783/work
+triton==3.3.0
+wandb==0.19.11

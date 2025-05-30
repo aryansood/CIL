@@ -36,11 +36,13 @@ model = SegFormerDepthEstimator.load_from_checkpoint('segformer_depth_checkpoint
 model.eval()
 
 # `data_dir`: replace the parameter with the path containing the test data.
-dataset = DepthDataset(data_dir='ethz-cil-monocular-depth-estimation-2025/test/test', augmentations=augmentations, has_gt=False)
+dataset = DepthDataset(data_dir='/cluster/courses/cil/monocular_depth/data/test', augmentations=augmentations, has_gt=False)
 test_loader = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=4)
 
 # `directory`: replace the variable with the path where you want to save the prediction files.
-directory = 'ethz-cil-monocular-depth-estimation-2025'
+directory = 'ethz-cil-monocular-depth-estimation-2025/test'
+if not os.path.exists(directory):
+    os.makedirs(directory)
 device = torch.device("cuda")
 
 file_depth_ext = pd.read_csv("test_list.txt", sep=' ')['depth_paths']
